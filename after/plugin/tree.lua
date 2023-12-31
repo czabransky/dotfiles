@@ -1,14 +1,7 @@
---lotus disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
--- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
--- empty setup using defaults
-require("nvim-tree").setup()
-
--- OR setup with some options
 require("nvim-tree").setup({
 	sort = {
 		sorter = "case_sensitive",
@@ -23,3 +16,7 @@ require("nvim-tree").setup({
 		dotfiles = true,
 	},
 })
+
+vim.keymap.set('n', '<leader>tt', function()
+	return require("nvim-tree.api").tree.toggle({ focus = false, find_file = true })
+end, { desc = 'Toggle Nvim Tree' })
