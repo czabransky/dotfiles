@@ -47,6 +47,6 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- Override the NETRW appearance.
-vim.g.netrw_browse_split = 1
-vim.g.netrw_banner = 1
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
