@@ -195,33 +195,6 @@ require('lazy').setup({
     },
   },
 
-  -- {
-  --   -- Theme inspired by Atom
-  --   'navarasu/onedark.nvim',
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd.colorscheme 'onedark'
-  --   end,
-  -- },
-
-  -- {
-  --   "catppuccin/nvim",
-  --   name = "catppuccin",
-  --   priority = 1000,
-  --   -- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
-  --   config = function()
-  --     vim.cmd.colorscheme 'catppuccin-mocha'
-  --   end,
-  -- },
-
-  {
-    "rebelot/kanagawa.nvim",
-    name = 'kanagawa',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'kanagawa-wave'
-    end,
-  },
 
   {
     -- Set lualine as statusline
@@ -305,6 +278,35 @@ require('lazy').setup({
     "theprimeagen/harpoon",
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" }
+  },
+
+  -- [[ Color Schemes: Comment or uncomment them as you wish! ]]
+  -- {
+  --   -- Theme inspired by Atom
+  --   'navarasu/onedark.nvim',
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'onedark'
+  --   end,
+  -- },
+
+  -- {
+  --   "catppuccin/nvim",
+  --   name = "catppuccin",
+  --   priority = 1000,
+  --   -- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+  --   config = function()
+  --     vim.cmd.colorscheme 'catppuccin-mocha'
+  --   end,
+  -- },
+
+  {
+    "rebelot/kanagawa.nvim",
+    name = 'kanagawa',
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'kanagawa-wave'
+    end,
   },
 
 }, {})
