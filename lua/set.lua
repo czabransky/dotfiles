@@ -2,6 +2,9 @@
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+-- Make the current line more visible.
+vim.o.cursorline = true
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
