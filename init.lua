@@ -204,13 +204,22 @@ require('lazy').setup({
   --   end,
   -- },
 
+  -- {
+  --   "catppuccin/nvim",
+  --   name = "catppuccin",
+  --   priority = 1000,
+  --   -- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+  --   config = function()
+  --     vim.cmd.colorscheme 'catppuccin-mocha'
+  --   end,
+  -- },
+
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    "rebelot/kanagawa.nvim",
+    name = 'kanagawa',
     priority = 1000,
-    -- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
     config = function()
-      vim.cmd.colorscheme 'catppuccin-mocha'
+      vim.cmd.colorscheme 'kanagawa-wave'
     end,
   },
 
