@@ -1,0 +1,170 @@
+let mapleader = "\<SPACE>"
+set history=1000
+set hlsearch
+set ignorecase smartcase
+set incsearch
+set notimeout
+set number
+set relativenumber
+set scrolloff=5
+set showmode
+set smartcase
+
+" Plugins
+" open hyperlinks using gx
+" https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins
+" =========================================================
+
+set noerrorbells
+set visualbell
+
+Plug 'nerdtree'
+" https://github.com/preservim/nerdtree
+" https://github.com/preservim/nerdtree/blob/master/doc/NERDTree.txt
+" https://raw.githubusercontent.com/wiki/JetBrains/ideavim/NERDTree-support.md
+
+Plug 'vim-commentary'
+" https://github.com/tpope/vim-commentary
+" https://github.com/tpope/vim-commentary/blob/master/doc/commentary.txt
+" Use gcc to comment out a line (takes a count), gc to comment out the target of a motion (for example, gcap to comment out a paragraph)
+
+Plug 'vim-exchange'
+" https://github.com/tommcdo/vim-exchange
+" https://github.com/tommcdo/vim-exchange/blob/master/doc/exchange.txt
+" Easy text exchange operator for Vim. Use cx+motion to select text.
+
+Plug 'vim-highlightedyank'
+" https://github.com/machakann/vim-highlightedyank
+let g:highlightedyank_highlight_duration = 1000
+let g:highlightedyank_highlight_in_visual = 1
+
+Plug 'vim-surround'
+" https://github.com/tpope/vim-surround
+" https://github.com/tpope/vim-surround/blob/master/doc/surround.txt
+
+
+" Installed Plugins
+" ========================================================================
+" The following Plugins must be installed in the IDEA Marketplace, and are
+" activated using the set <Plug> command.
+"
+set quickscope
+" https://github.com/unblevable/quick-scope
+let g:qs_enable=1
+let g:qs_max_chars=120
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+set which-key
+" https://github.com/TheBlob42/idea-which-key
+let g:WhichKey_ShowVimActions = "false"
+let g:WhichKey_ShowTypedSequence = "true"
+let g:WhichKey_DefaultDelay = 0
+let g:WhichKey_ProcessUnknownMappings = "false"
+let g:WhichKey_KeyColor = "#88d8b0"
+let g:WhichKey_KeyStyle = "none"
+let g:WhichKey_PrefixColor = "keyword"
+
+let g:WhichKeyDesc_project = "<leader>p Project"
+let g:WhichKeyDesc_project_idea_reload = "<leader>pi Reload Idea VimRC"
+let g:WhichKeyDesc_project_recent = "<leader>pr Recent Projects"
+
+let g:WhichKeyDesc_window = "<leader>w Windows"
+let g:WhichKeyDesc_window_toggle = "<leader>ww Hide/Show All [W]indows"
+let g:WhichKeyDesc_window_distraction = "<leader>wd Toggle [D]istraction Free Mode"
+let g:WhichKeyDesc_window_explorer = "<leader>we Focus Project [E]xplorer"
+let g:WhichKeyDesc_window_terminal = "<leader>wt Focus [T]erminal"
+let g:WhichKeyDesc_window_maven = "<leader>wm Focus [M]aven Tool Window"
+let g:WhichKeyDesc_window_focus_window_left = "<leader>wh Focus Window or Buffer to the Left"
+let g:WhichKeyDesc_window_focus_window_right = "<leader>wl Focus Window or Buffer to the Right"
+let g:WhichKeyDesc_window_split_vertical = "<leader>w| Vertical Split"
+let g:WhichKeyDesc_window_split_horizontal = "<leader>w- Horizontal Split"
+
+let g:WhichKeyDesc_search = "<leader>s Search"
+let g:WhichKeyDesc_search_everywhere = "<leader>se [S]earch [E]verywhere"
+let g:WhichKeyDesc_search_recent = "<leader>sr [S]earch [R]ecent"
+let g:WhichKeyDesc_search_files = "<leader>sf [S]earch [F]iles"
+let g:WhichKeyDesc_search_path = "<leader>sp [S]earch [P]ath"
+let g:WhichKeyDesc_search_select_menu = "<leader>ss [S]earch [S]elect"
+
+let g:WhichKeyDesc_run = "<leader>r Run Configurations"
+let g:WhichKeyDesc_run_edit_config = "<leader>re [E]dit / Set Active Configuration"
+let g:WhichKeyDesc_run_active_config = "<leader>ra Run [A]ctive Configuration"
+let g:WhichKeyDesc_run_choose_config = "<leader>rc [C]hoose and Run Configuration"
+let g:WhichKeyDesc_run_scope = "<leader>rs Run Current [S]cope"
+let g:WhichKeyDesc_run_coverage = "<leader>rv Co[v]erage"
+
+let g:WhichKeyDesc_debug = "<leader>d Debug Configurations"
+let g:WhichKeyDesc_debug_edit_config = "<leader>de [E]dit / Set Active Configuration"
+let g:WhichKeyDesc_debug_active_config = "<leader>da Debug [A]ctive Configuration"
+let g:WhichKeyDesc_debug_choose_config = "<leader>dc [C]hoose and Run Debug Configuration"
+let g:WhichKeyDesc_debug_scope = "<leader>ds Debug Current [S]cope"
+let g:WhichKeyDesc_debug_breakpoint = "<leader>dp Toggle Break[p]oint"
+
+"" Project Key Mappings
+nmap <Leader>pi :action IdeaVim.ReloadVimRc.reload<CR>
+nmap <Leader>pr :action ManageRecentProjects<CR>
+
+"" Window Management Key Mappings
+nmap <Leader>ww :action HideAllWindows<CR>
+nmap <Leader>wd :action ToggleDistractionFreeMode<CR>
+nmap <Leader>we :NERDTreeToggle<CR>
+nmap <Leader>wt :action ActivateTerminalToolWindow<CR>
+nmap <Leader>wm :action ActivateMavenToolWindow<CR>
+nmap <Leader>wh <C-W>h
+nmap <Leader>wl <C-W>l
+nmap <Leader>w\ :vsplit<CR>
+nmap <Leader>w- :split<CR>
+nnoremap <Leader>q :q <CR>
+
+"" Run / Debug Key Mappings
+nmap <Leader>re :action editRunConfigurations<CR>
+nmap <Leader>ra :action Run<CR>
+nmap <Leader>rc :action ChooseRunConfiguration<CR>
+nmap <Leader>rs :action RunClass<CR>
+nmap <Leader>rv :action Coverage<CR>
+nmap <Leader>de :action editRunConfigurations<CR>
+nmap <Leader>da :action Debug<CR>
+nmap <Leader>dc :action ChooseDebugConfiguration<CR>
+nmap <Leader>ds :action DebugClass<CR>
+nmap <Leader>dp :action ToggleLineBreakpoint<CR>
+
+"" File Navigation Key Mappings
+nmap <Leader>sr :action RecentFiles<CR>
+nmap <Leader>sf :action GotoFile<CR>
+nmap <Leader>se :action SearchEverywhere<CR>
+nmap <Leader>sp :action FindInPath<CR>
+nmap <Leader>ss :action SelectIn<CR>
+nmap <Leader>e :action GotoNextError<CR>
+
+"" Code Editing Key Mappings
+nmap <Leader>cc :action CommentByLineComment<CR>
+vmap <Leader>cc :action CommentByLineComment<CR>
+nmap <Leader>cr :action Refactorings.QuickListPopupAction<CR>
+nmap <CR> :action ReformatCode<CR> :write<CR>
+
+
+" Git Actions mimic hotkeys from Fugitive
+nmap <Leader>gs :action CheckinProject<CR>
+nmap <Leader>gc :action CheckinProject<CR>
+nmap <Leader>ga :action Git.Add<CR>
+nmap <Leader>gp :action Git.Pull<CR>
+nmap <Leader>gn :action Annotate<CR>
+nmap <Leader>gl :action Git.Log<CR>
+nmap <Leader>go :action Github.Open.In.Browser<CR>
+nmap <Leader>br :action Git.Branches<CR>
+nmap <Leader>gb :action Git.Branches<CR>
+
+" Must Have Remaps
+"" The well-known 'Greatest Remap Ever', deletes visually selected text without overwriting the default buffer
+"" This collection of remaps is used in most vim setups.
+vnoremap <leader>p "_dP
+nnoremap Y y$
+vnoremap J :m '>+1<CR>
+vnoremap K :m '<-2<CR>
+nnoremap <Leader>/ :nohlsearch<CR>
+nnoremap n nzz
+nnoremap N Nzz
+
+" Misc Mappings"
+nnoremap <Leader><Leader>r :%s//g<Left><Left>
+xnoremap <Leader><Leader>r :s//g<Left><Left>
