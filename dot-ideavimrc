@@ -74,12 +74,12 @@ let g:WhichKeyDesc_window_focus_window_right = "<leader>wl Focus Window or Buffe
 let g:WhichKeyDesc_window_split_vertical = "<leader>w| Vertical Split"
 let g:WhichKeyDesc_window_split_horizontal = "<leader>w- Horizontal Split"
 
-let g:WhichKeyDesc_search = "<leader>s Search"
-let g:WhichKeyDesc_search_everywhere = "<leader>se [S]earch [E]verywhere"
-let g:WhichKeyDesc_search_recent = "<leader>sr [S]earch [R]ecent"
-let g:WhichKeyDesc_search_files = "<leader>sf [S]earch [F]iles"
-let g:WhichKeyDesc_search_path = "<leader>sp [S]earch [P]ath"
-let g:WhichKeyDesc_search_select_menu = "<leader>ss [S]earch [S]elect"
+let g:WhichKeyDesc_files = "<leader>f Find Files"
+let g:WhichKeyDesc_files_everywhere = "<leader>fe [F]ind [E]verywhere"
+let g:WhichKeyDesc_files_files = "<leader>ff [F]ind [F]iles"
+let g:WhichKeyDesc_files_recent = "<leader>fr [F]ind [R]ecent"
+let g:WhichKeyDesc_files_path = "<leader>fp [F]ind in [P]ath"
+let g:WhichKeyDesc_files_select_menu = "<leader>fs [S]elect In Menu"
 
 let g:WhichKeyDesc_run = "<leader>r Run Configurations"
 let g:WhichKeyDesc_run_edit_config = "<leader>re [E]dit / Set Active Configuration"
@@ -131,11 +131,11 @@ nmap <leader>ds :action DebugClass<CR>
 nmap <leader>dp :action ToggleLineBreakpoint<CR>
 
 "" File Navigation Key Mappings
-nmap <leader>sr :action RecentFiles<CR>
-nmap <leader>sf :action GotoFile<CR>
-nmap <leader>se :action SearchEverywhere<CR>
-nmap <leader>sp :action FindInPath<CR>
-nmap <leader>ss :action SelectIn<CR>
+nmap <leader>fe :action SearchEverywhere<CR>
+nmap <leader>ff :action GotoFile<CR>
+nmap <leader>fr :action RecentFiles<CR>
+nmap <leader>fp :action FindInPath<CR>
+nmap <leader>fs :action SelectIn<CR>
 nmap <leader>e :action GotoNextError<CR>
 
 "" Editing Key Mappings

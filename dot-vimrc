@@ -1,4 +1,5 @@
 let mapleader = "\<SPACE>"
+let maplocalleader = "\<SPACE>"
 set history=1000
 set hlsearch
 set ignorecase smartcase
@@ -15,6 +16,8 @@ nmap <leader>wh <C-W>h
 nmap <leader>wl <C-W>l
 nmap <leader>w\ :vsplit<CR>
 nmap <leader>w- :split<CR>
+nnoremap <leader>w, :vertical resize -10<CR>
+nnoremap <leader>w. :vertical resize +10<CR>
 nnoremap <leader>q :q<CR>
 
 " Best Remaps of All Time
