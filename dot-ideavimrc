@@ -1,14 +1,7 @@
-let mapleader = "\<SPACE>"
-set history=1000
-set hlsearch
-set ignorecase smartcase
-set incsearch
-set notimeout
-set number
-set relativenumber
-set scrolloff=5
-set showmode
-set smartcase
+" IDEA Vim
+" https://github.com/JetBrains/ideavim
+
+source ~/.vimrc
 
 " Plugins
 " open hyperlinks using gx
@@ -67,6 +60,7 @@ let g:WhichKey_PrefixColor = "keyword"
 let g:WhichKeyDesc_project = "<leader>p Project"
 let g:WhichKeyDesc_project_idea_reload = "<leader>pi Reload Idea VimRC"
 let g:WhichKeyDesc_project_recent = "<leader>pr Recent Projects"
+let g:WhichKeyDesc_project_maven_reimport = "<leader>pm Maven Reimport"
 
 let g:WhichKeyDesc_window = "<leader>w Windows"
 let g:WhichKeyDesc_window_toggle = "<leader>ww Hide/Show All [W]indows"
@@ -74,6 +68,7 @@ let g:WhichKeyDesc_window_distraction = "<leader>wd Toggle [D]istraction Free Mo
 let g:WhichKeyDesc_window_explorer = "<leader>we Focus Project [E]xplorer"
 let g:WhichKeyDesc_window_terminal = "<leader>wt Focus [T]erminal"
 let g:WhichKeyDesc_window_maven = "<leader>wm Focus [M]aven Tool Window"
+let g:WhichKeyDesc_window_coverage = "<leader>wv Focus Co[v]erage Tool Window"
 let g:WhichKeyDesc_window_focus_window_left = "<leader>wh Focus Window or Buffer to the Left"
 let g:WhichKeyDesc_window_focus_window_right = "<leader>wl Focus Window or Buffer to the Right"
 let g:WhichKeyDesc_window_split_vertical = "<leader>w| Vertical Split"
@@ -88,6 +83,7 @@ let g:WhichKeyDesc_search_select_menu = "<leader>ss [S]earch [S]elect"
 
 let g:WhichKeyDesc_run = "<leader>r Run Configurations"
 let g:WhichKeyDesc_run_edit_config = "<leader>re [E]dit / Set Active Configuration"
+let g:WhichKeyDesc_run_run = "<leader>rr [R]un Active Configuration"
 let g:WhichKeyDesc_run_active_config = "<leader>ra Run [A]ctive Configuration"
 let g:WhichKeyDesc_run_choose_config = "<leader>rc [C]hoose and Run Configuration"
 let g:WhichKeyDesc_run_scope = "<leader>rs Run Current [S]cope"
@@ -95,76 +91,70 @@ let g:WhichKeyDesc_run_coverage = "<leader>rv Co[v]erage"
 
 let g:WhichKeyDesc_debug = "<leader>d Debug Configurations"
 let g:WhichKeyDesc_debug_edit_config = "<leader>de [E]dit / Set Active Configuration"
+let g:WhichKeyDesc_debug_debug = "<leader>dd [D]ebug Active Configuration"
 let g:WhichKeyDesc_debug_active_config = "<leader>da Debug [A]ctive Configuration"
 let g:WhichKeyDesc_debug_choose_config = "<leader>dc [C]hoose and Run Debug Configuration"
 let g:WhichKeyDesc_debug_scope = "<leader>ds Debug Current [S]cope"
 let g:WhichKeyDesc_debug_breakpoint = "<leader>dp Toggle Break[p]oint"
 
+let g:WhichKeyDesc_edit = "<leader>e Edit Actions"
+let g:WhichKeyDesc_edit_comment = "<leader>ec [C]omment Lines"
+let g:WhichKeyDesc_edit_generate = "<leader>eg [G]enerate"
+let g:WhichKeyDesc_edit_refactor_this = "<leader>er [R]efactor This Menu"
+let g:WhichKeyDesc_edit_override = "<leader>eo [O]verride Methods"
+
 "" Project Key Mappings
-nmap <Leader>pi :action IdeaVim.ReloadVimRc.reload<CR>
-nmap <Leader>pr :action ManageRecentProjects<CR>
+nmap <leader>pi :action IdeaVim.ReloadVimRc.reload<CR>
+nmap <leader>pr :action ManageRecentProjects<CR>
+nmap <leader>pm :action ActivateMavenToolWindow<CR>:action Maven.Reimport<CR>
 
 "" Window Management Key Mappings
-nmap <Leader>ww :action HideAllWindows<CR>
-nmap <Leader>wd :action ToggleDistractionFreeMode<CR>
-nmap <Leader>we :NERDTreeToggle<CR>
-nmap <Leader>wt :action ActivateTerminalToolWindow<CR>
-nmap <Leader>wm :action ActivateMavenToolWindow<CR>
-nmap <Leader>wh <C-W>h
-nmap <Leader>wl <C-W>l
-nmap <Leader>w\ :vsplit<CR>
-nmap <Leader>w- :split<CR>
-nnoremap <Leader>q :q <CR>
+nmap <leader>ww :action HideAllWindows<CR>
+nmap <leader>wd :action ToggleDistractionFreeMode<CR>
+nmap <leader>we :NERDTreeToggle<CR>
+nmap <leader>wt :action ActivateTerminalToolWindow<CR>
+nmap <leader>wm :action ActivateMavenToolWindow<CR>
+nmap <leader>wv :action ActivateCoverageToolWindow<CR>
 
 "" Run / Debug Key Mappings
-nmap <Leader>re :action editRunConfigurations<CR>
-nmap <Leader>ra :action Run<CR>
-nmap <Leader>rc :action ChooseRunConfiguration<CR>
-nmap <Leader>rs :action RunClass<CR>
-nmap <Leader>rv :action Coverage<CR>
-nmap <Leader>de :action editRunConfigurations<CR>
-nmap <Leader>da :action Debug<CR>
-nmap <Leader>dc :action ChooseDebugConfiguration<CR>
-nmap <Leader>ds :action DebugClass<CR>
-nmap <Leader>dp :action ToggleLineBreakpoint<CR>
+nmap <leader>re :action editRunConfigurations<CR>
+nmap <leader>rr :action Run<CR>
+nmap <leader>ra :action Run<CR>
+nmap <leader>rc :action ChooseRunConfiguration<CR>
+nmap <leader>rs :action RunClass<CR>
+nmap <leader>rv :action Coverage<CR>
+nmap <leader>de :action editRunConfigurations<CR>
+nmap <leader>dd :action Debug<CR>
+nmap <leader>da :action Debug<CR>
+nmap <leader>dc :action ChooseDebugConfiguration<CR>
+nmap <leader>ds :action DebugClass<CR>
+nmap <leader>dp :action ToggleLineBreakpoint<CR>
 
 "" File Navigation Key Mappings
-nmap <Leader>sr :action RecentFiles<CR>
-nmap <Leader>sf :action GotoFile<CR>
-nmap <Leader>se :action SearchEverywhere<CR>
-nmap <Leader>sp :action FindInPath<CR>
-nmap <Leader>ss :action SelectIn<CR>
-nmap <Leader>e :action GotoNextError<CR>
+nmap <leader>sr :action RecentFiles<CR>
+nmap <leader>sf :action GotoFile<CR>
+nmap <leader>se :action SearchEverywhere<CR>
+nmap <leader>sp :action FindInPath<CR>
+nmap <leader>ss :action SelectIn<CR>
+nmap <leader>e :action GotoNextError<CR>
 
-"" Code Editing Key Mappings
-nmap <Leader>cc :action CommentByLineComment<CR>
-vmap <Leader>cc :action CommentByLineComment<CR>
-nmap <Leader>cr :action Refactorings.QuickListPopupAction<CR>
-nmap <CR> :action ReformatCode<CR> :write<CR>
+"" Editing Key Mappings
+nmap <leader>ec :action CommentByLineComment<CR>
+vmap <leader>ec :action CommentByLineComment<CR>
+nmap <leader>eg :action Generate<CR>
+nmap <leader>er :action Refactorings.QuickListPopupAction<CR>
+nmap <leader>eo :action OverrideMethods<CR>
+nmap <CR> :aceion ReformatCode<CR> :write<CR>
 
 
 " Git Actions mimic hotkeys from Fugitive
-nmap <Leader>gs :action CheckinProject<CR>
-nmap <Leader>gc :action CheckinProject<CR>
-nmap <Leader>ga :action Git.Add<CR>
-nmap <Leader>gp :action Git.Pull<CR>
-nmap <Leader>gn :action Annotate<CR>
-nmap <Leader>gl :action Git.Log<CR>
-nmap <Leader>go :action Github.Open.In.Browser<CR>
-nmap <Leader>br :action Git.Branches<CR>
-nmap <Leader>gb :action Git.Branches<CR>
+nmap <leader>gs :action CheckinProject<CR>
+nmap <leader>gc :action CheckinProject<CR>
+nmap <leader>ga :action Git.Add<CR>
+nmap <leader>gp :action Git.Pull<CR>
+nmap <leader>gn :action Annotate<CR>
+nmap <leader>gl :action Git.Log<CR>
+nmap <leader>go :action Github.Open.In.Browser<CR>
+nmap <leader>br :action Git.Branches<CR>
+nmap <leader>gb :action Git.Branches<CR>
 
-" Must Have Remaps
-"" The well-known 'Greatest Remap Ever', deletes visually selected text without overwriting the default buffer
-"" This collection of remaps is used in most vim setups.
-vnoremap <leader>p "_dP
-nnoremap Y y$
-vnoremap J :m '>+1<CR>
-vnoremap K :m '<-2<CR>
-nnoremap <Leader>/ :nohlsearch<CR>
-nnoremap n nzz
-nnoremap N Nzz
-
-" Misc Mappings"
-nnoremap <Leader><Leader>r :%s//g<Left><Left>
-xnoremap <Leader><Leader>r :s//g<Left><Left>

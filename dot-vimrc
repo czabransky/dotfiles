@@ -1,0 +1,38 @@
+let mapleader = "\<SPACE>"
+set history=1000
+set hlsearch
+set ignorecase smartcase
+set incsearch
+set notimeout
+set number
+set relativenumber
+set scrolloff=5
+set showmode
+set smartcase
+
+" Windows
+nmap <leader>wh <C-W>h
+nmap <leader>wl <C-W>l
+nmap <leader>w\ :vsplit<CR>
+nmap <leader>w- :split<CR>
+nnoremap <leader>q :q<CR>
+
+" Best Remaps of All Time
+nmap Q gq
+imap jj <Esc>
+imap jk <Esc>
+nnoremap Y y$
+vnoremap <leader>P "_dP
+vmap <leader>Y "+y
+vmap <leader>D "+d
+nmap <leader>P "+p
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap <leader>/ :nohlsearch<CR>
+
+" Misc Mappings
+nmap <CR> :write<CR>
+nnoremap <leader><leader>r :%s//g<Left><Left>
+xnoremap <leader><leader>r :s/\%V/g<Left><Left>
