@@ -1,15 +1,36 @@
 let mapleader = "\<SPACE>"
 let maplocalleader = "\<SPACE>"
+set cursorline
 set history=1000
-set hlsearch
 set ignorecase smartcase
 set incsearch
-set notimeout
+set nobackup
+set nohlsearch
+set noswapfile
+set nowrap
 set number
 set relativenumber
-set scrolloff=5
+set scrolloff=8
+set shiftwidth=4
 set showmode
+set signcolumn
 set smartcase
+set smartindent
+set softtabstop=4
+set tabstop=4
+set termguicolors
+set timeoutlen=200
+set updatetime=50
+
+if !isdirectory($HOME.'/.vim')
+	call mkdir($HOME.'/.vim', '', 0770)
+endif
+if !isdirectory($HOME.'/.vim/undodir')
+	call mkdir($HOME.'/.vim/undodir', '', 0770)
+endif
+
+set undodir=~/.vim/undodir
+set undofile
 
 " Windows
 nmap <leader>wh <C-W>h
@@ -25,14 +46,14 @@ nmap Q gq
 imap jj <Esc>
 imap jk <Esc>
 nnoremap Y y$
-vnoremap <leader>P "_dP
-vmap <leader>Y "+y
-vmap <leader>D "+d
-nmap <leader>P "+p
+xnoremap <leader>p "_dP
+nmap <leader>y "+y
+vmap <leader>y "+y
+nmap <leader>Y "+Y
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-nnoremap n nzz
-nnoremap N Nzz
+nnoremap n nzzzv
+nnoremap N Nzzzv
 nnoremap <leader>/ :nohlsearch<CR>
 
 " Misc Mappings

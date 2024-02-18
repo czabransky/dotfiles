@@ -15,7 +15,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
-require('lazy').setup({
+require('lazy').setup {
+	{ 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
+	{ 'morhetz/gruvbox', name = 'gruvbox', priority = 1000 },
 	{ 'folke/which-key.nvim', opts = {} },
 	{ 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
-})
+	{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = vim.fn.executable 'make' == 1},
+}
