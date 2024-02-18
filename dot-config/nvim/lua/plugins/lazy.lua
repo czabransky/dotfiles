@@ -18,7 +18,15 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup {
 	{ 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
 	{ 'morhetz/gruvbox', name = 'gruvbox', priority = 1000 },
+	{ 'nvim-lualine/lualine.nvim' },
+	{ 'folke/noice.nvim', event = 'VeryLazy', dependencies = { 'MunifTanjim/nui.nvim' } },
+	{ 'folke/twilight.nvim', opts = {} },
 	{ 'folke/which-key.nvim', opts = {} },
 	{ 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
 	{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = vim.fn.executable 'make' == 1},
+	{ 'folke/trouble.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }, opts = {} },
+
+	--[[ Optional ]]
+	--{ 'folke/zen-mode.nvim', opts = {} },
+	--{ 'tpope/vim-surround' },
 }
