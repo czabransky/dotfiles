@@ -69,8 +69,6 @@ let g:WhichKeyDesc_window_explorer = "<leader>we Focus Project [E]xplorer"
 let g:WhichKeyDesc_window_terminal = "<leader>wt Focus [T]erminal"
 let g:WhichKeyDesc_window_maven = "<leader>wm Focus [M]aven Tool Window"
 let g:WhichKeyDesc_window_coverage = "<leader>wv Focus Co[v]erage Tool Window"
-let g:WhichKeyDesc_window_focus_window_left = "<leader>wh Focus Window or Buffer to the Left"
-let g:WhichKeyDesc_window_focus_window_right = "<leader>wl Focus Window or Buffer to the Right"
 let g:WhichKeyDesc_window_split_vertical = "<leader>w| Vertical Split"
 let g:WhichKeyDesc_window_split_horizontal = "<leader>w- Horizontal Split"
 

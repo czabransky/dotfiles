@@ -33,8 +33,6 @@ set undodir=~/.vim/undodir
 set undofile
 
 " Windows
-nmap <leader>wh <C-W>h
-nmap <leader>wl <C-W>l
 nmap <leader>w\ :vsplit<CR>
 nmap <leader>w- :split<CR>
 nnoremap <leader>w, :vertical resize -10<CR>
@@ -54,7 +52,6 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 nnoremap n nzzzv
 nnoremap N Nzzzv
-nnoremap <leader>/ :nohlsearch<CR>
 
 " Misc Mappings
 nmap <CR> :write<CR>
