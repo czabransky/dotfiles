@@ -5,3 +5,10 @@
 --vim.cmd.colorscheme 'catppuccin-mocha'
 
 vim.cmd.colorscheme 'gruvbox'
+
+colorscheme 'catppuccin'
+colorscheme 'catppuccin-frappe'
+colorscheme 'catppuccin-latte'
+colorscheme 'catppuccin-macchiato'
+colorscheme 'catppuccin-mocha'
+colorscheme 'gruvbox'
