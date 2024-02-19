@@ -39,7 +39,14 @@ require('lazy').setup {
 		{ 'j-hui/fidget.nvim', opts = {} },
 		{ 'folke/neodev.nvim', opts = {} },
 	}},
+
+	--Auto Completion
+	{ 'hrsh7th/nvim-cmp', dependencies = {
+		{ 'hrsh7th/cmp-nvim-lsp' },
+		{ 'L3MON4D3/LuaSnip' },
+	}},
 }
+
 
 require('mason').setup()
 require('mason-lspconfig').setup()
