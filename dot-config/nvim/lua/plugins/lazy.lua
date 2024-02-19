@@ -31,7 +31,7 @@ require('lazy').setup {
 
 	--[[ Optional ]]
 	--{ 'tpope/vim-surround' },
-	
+
 	--LSP
 	{ 'neovim/nvim-lspconfig', dependencies = {
 		{ 'williamboman/mason.nvim', config = true },
@@ -46,20 +46,3 @@ require('lazy').setup {
 		{ 'L3MON4D3/LuaSnip' },
 	}},
 }
-
-
-require('mason').setup()
-require('mason-lspconfig').setup()
-require('neodev').setup()
-
---local servers = {
---	lua_ls = {
---		Lua = {
---			workspace = { checkThirdParty = false },
---			telemetry = { enable = false },
---		},
---	},
---}
---local capabilities = vim.lsp.protocol.make_client_capabilities()
---capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
---

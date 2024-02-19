@@ -28,6 +28,7 @@ require('plugins.twilight')
 require('plugins.whichkey')
 require('plugins.telescope')
 require('plugins.treesitter')
+require('plugins.lsp')
 
 -- [[ Highlight on Yank ]]
 -- see `:help vim.highlight.on_yank()`
