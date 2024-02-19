@@ -5,6 +5,7 @@ require('which-key').setup {
 }
 
 require('which-key').register {
+	['<leader>t'] = { name = '[T]oggle' },
 	['<leader>w'] = { name = '[W]indows' },
 	['<leader>s'] = { name = '[S]earch' },
 	['<leader>g'] = { name = '[G]it' },

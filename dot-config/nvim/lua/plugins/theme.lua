@@ -3,7 +3,8 @@
 --vim.cmd.colorscheme 'catppuccin-latte'
 --vim.cmd.colorscheme 'catppuccin-macchiato'
 --vim.cmd.colorscheme 'catppuccin-mocha'
-vim.cmd.colorscheme 'gruvbox'
+--vim.cmd.colorscheme 'gruvbox'
+vim.cmd.colorscheme 'onedark'
 
 --colorscheme catppuccin
 --colorscheme catppuccin-frappe
@@ -11,3 +12,9 @@ vim.cmd.colorscheme 'gruvbox'
 --colorscheme catppuccin-macchiato
 --colorscheme catppuccin-mocha
 --colorscheme gruvbox
+--colorscheme onedark
+
+require('onedark').setup {
+	style = 'dark',
+	toggle_style_key = '<leader>ts'
+}
