@@ -15,23 +15,20 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
-	{ 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
-	{ 'morhetz/gruvbox', name = 'gruvbox', priority = 1000 },
-	{ 'navarasu/onedark.nvim', name = 'onedark', priority = 1000 },
-	{ 'nvim-tree/nvim-tree.lua', dependencies = { 'nvim-tree/nvim-web-devicons' } },
-	{ 'nvim-lualine/lualine.nvim' },
+	require('plugins.configs.theme'),
+	require('plugins.configs.whichkey'),
+	require('plugins.configs.nvimtree'),
+	require('plugins.configs.telescope'),
+	require('plugins.configs.treesitter'),
+	require('plugins.configs.lualine'),
+
 	{ 'folke/noice.nvim', event = 'VeryLazy', dependencies = { 'MunifTanjim/nui.nvim' } },
 	{ 'folke/twilight.nvim', opts = {} },
 	{ 'folke/zen-mode.nvim', opts = {} },
-	{ 'folke/which-key.nvim', opts = {} },
-	{ 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
-	{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = vim.fn.executable 'make' == 1 },
-	{ 'nvim-treesitter/nvim-treesitter', dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' }, build = ':TSUpdate' },
 	{ 'folke/trouble.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }, opts = {} },
-
-	--[[ Optional ]]
 	--{ 'tpope/vim-surround' },
-
+	
+	
 	--LSP
 	{ 'neovim/nvim-lspconfig', dependencies = {
 		{ 'williamboman/mason.nvim', config = true },

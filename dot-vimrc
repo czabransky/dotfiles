@@ -40,6 +40,7 @@ nnoremap <leader>w. :vertical resize +10<CR>
 nnoremap <leader>q :q<CR>
 
 " Best Remaps of All Time
+nmap <leader>q :q
 nmap Q gq
 imap jj <Esc>
 imap jk <Esc>

@@ -39,3 +39,9 @@ omz theme set cloud
 brew install zoxide
 eval "$(zoxide init zsh)"
 brew install fzf
+
+
+# SDK Man
+curl -s 'https://get.sdkman.io' | bash
+source '$HOME/.sdkman/bin/sdkman-init.sh'
+sdk install java 21.0.2-amzn
