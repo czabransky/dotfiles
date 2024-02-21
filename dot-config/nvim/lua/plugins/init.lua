@@ -26,7 +26,7 @@ require('lazy').setup {
 	{ 'folke/twilight.nvim', opts = {} },
 	{ 'folke/zen-mode.nvim', opts = {} },
 	{ 'folke/trouble.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }, opts = {} },
-	--{ 'tpope/vim-surround' },
+	{ 'tpope/vim-surround' },
 	
 	
 	--LSP

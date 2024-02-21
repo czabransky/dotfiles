@@ -57,18 +57,19 @@ let g:WhichKey_KeyColor = "#88d8b0"
 let g:WhichKey_KeyStyle = "none"
 let g:WhichKey_PrefixColor = "keyword"
 
-let g:WhichKeyDesc_project = "<leader>p Project"
-let g:WhichKeyDesc_project_idea_reload = "<leader>pi Reload Idea VimRC"
-let g:WhichKeyDesc_project_recent = "<leader>pr Recent Projects"
-let g:WhichKeyDesc_project_maven_reimport = "<leader>pm Maven Reimport"
+let g:WhichKeyDesc_workspace = "<leader>w [W]orkspace"
+let g:WhichKeyDesc_workspace_recent = "<leader>wp Recent [P]rojects"
+let g:WhichKeyDesc_workspace_idea_reload = "<leader>wr [R]eload ~/.ideavimrc"
+let g:WhichKeyDesc_workspace_maven_reimport = "<leader>wm [M]aven Reimport"
 
-let g:WhichKeyDesc_window = "<leader>w Windows"
-let g:WhichKeyDesc_window_toggle = "<leader>ww Hide/Show All [W]indows"
-let g:WhichKeyDesc_window_distraction = "<leader>wd Toggle [D]istraction Free Mode"
-let g:WhichKeyDesc_window_explorer = "<leader>we Focus Project [E]xplorer"
-let g:WhichKeyDesc_window_terminal = "<leader>wt Focus [T]erminal"
-let g:WhichKeyDesc_window_maven = "<leader>wm Focus [M]aven Tool Window"
-let g:WhichKeyDesc_window_coverage = "<leader>wv Focus Co[v]erage Tool Window"
+let g:WhichKeyDesc_toggle = "<leader>t [T]oggle"
+let g:WhichKeyDesc_toggle_toggle = "<leader>tw Hide/Show All [W]indows"
+let g:WhichKeyDesc_toggle_distraction = "<leader>td Toggle [D]istraction Free Mode"
+let g:WhichKeyDesc_toggle_explorer = "<leader>tt [T]oggle Project [T]ree"
+let g:WhichKeyDesc_toggle_terminal = "<leader>ts [T]oggle [S]hell"
+let g:WhichKeyDesc_toggle_maven = "<leader>tm [T]oggle [M]aven Tool Window"
+let g:WhichKeyDesc_toggle_coverage = "<leader>tv [T]oggle Co[v]erage Tool Window"
+
 let g:WhichKeyDesc_window_split_vertical = "<leader>w| Vertical Split"
 let g:WhichKeyDesc_window_split_horizontal = "<leader>w- Horizontal Split"
 
@@ -93,24 +94,24 @@ let g:WhichKeyDesc_debug_choose_config = "<leader>dc [C]hoose and Run Debug Conf
 let g:WhichKeyDesc_debug_scope = "<leader>ds Debug Current [S]cope"
 let g:WhichKeyDesc_debug_breakpoint = "<leader>dp Toggle Break[p]oint"
 
-let g:WhichKeyDesc_edit = "<leader>e Edit Actions"
-let g:WhichKeyDesc_edit_comment = "<leader>ec [C]omment Lines"
-let g:WhichKeyDesc_edit_generate = "<leader>eg [G]enerate"
-let g:WhichKeyDesc_edit_refactor_this = "<leader>er [R]efactor This Menu"
-let g:WhichKeyDesc_edit_override = "<leader>eo [O]verride Methods"
+let g:WhichKeyDesc_code = "<leader>c [C]ode Actions"
+let g:WhichKeyDesc_code_comment = "<leader>cc [C]omment Lines"
+let g:WhichKeyDesc_code_generate = "<leader>cg [G]enerate"
+let g:WhichKeyDesc_code_refactor_this = "<leader>cr [R]efactor This Menu"
+let g:WhichKeyDesc_code_override = "<leader>co [O]verride Methods"
 
 "" Project Key Mappings
-nmap <leader>pi :action IdeaVim.ReloadVimRc.reload<CR>
-nmap <leader>pr :action ManageRecentProjects<CR>
-nmap <leader>pm :action ActivateMavenToolWindow<CR>:action Maven.Reimport<CR>
+nmap <leader>wv :action IdeaVim.ReloadVimRc.reload<CR>
+nmap <leader>wp :action ManageRecentProjects<CR>
+nmap <leader>wm :action ActivateMavenToolWindow<CR>:action Maven.Reimport<CR>
 
 "" Window Management Key Mappings
-nmap <leader>ww :action HideAllWindows<CR>
-nmap <leader>wd :action ToggleDistractionFreeMode<CR>
-nmap <leader>we :NERDTreeToggle<CR>
-nmap <leader>wt :action ActivateTerminalToolWindow<CR>
-nmap <leader>wm :action ActivateMavenToolWindow<CR>
-nmap <leader>wv :action ActivateCoverageToolWindow<CR>
+nmap <leader>tw :action HideAllWindows<CR>
+nmap <leader>td :action ToggleDistractionFreeMode<CR>
+nmap <leader>tt :NERDTreeToggle<CR>
+nmap <leader>ts :action ActivateTerminalToolWindow<CR>
+nmap <leader>tm :action ActivateMavenToolWindow<CR>
+nmap <leader>tv :action ActivateCoverageToolWindow<CR>
 
 "" Run / Debug Key Mappings
 nmap <leader>re :action editRunConfigurations<CR>
@@ -133,12 +134,12 @@ nmap <leader>ss :action SelectIn<CR>
 nmap <leader>e :action GotoNextError<CR>
 
 "" Editing Key Mappings
-nmap <leader>ec :action CommentByLineComment<CR>
-vmap <leader>ec :action CommentByLineComment<CR>
-nmap <leader>eg :action Generate<CR>
-nmap <leader>er :action Refactorings.QuickListPopupAction<CR>
-nmap <leader>eo :action OverrideMethods<CR>
-nmap <CR> :aceion ReformatCode<CR> :write<CR>
+nmap <leader>cc :action CommentByLineComment<CR>
+vmap <leader>cc :action CommentByLineComment<CR>
+nmap <leader>cg :action Generate<CR>
+nmap <leader>cr :action Refactorings.QuickListPopupAction<CR>
+nmap <leader>co :action OverrideMethods<CR>
+nmap <CR> :action ReformatCode<CR> :write<CR>
 
 
 " Git Actions mimic hotkeys from Fugitive
