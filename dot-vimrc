@@ -35,6 +35,7 @@ set undofile
 " Windows
 nmap <leader>w\ :vsplit<CR>
 nmap <leader>w- :split<CR>
+nmap <CR> :write<CR>
 nnoremap <leader>w, :vertical resize -10<CR>
 nnoremap <leader>w. :vertical resize +10<CR>
 nnoremap <leader>q :q<CR>
@@ -55,6 +56,5 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 " Misc Mappings
-nmap <CR> :write<CR>
 nnoremap <leader><leader>r :%s//g<Left><Left>
 xnoremap <leader><leader>r :s/\%V/g<Left><Left>

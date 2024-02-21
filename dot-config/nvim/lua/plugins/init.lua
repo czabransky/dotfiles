@@ -14,14 +14,16 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup {
-	require('plugins.configs.theme'),
+
+local plugin_specs = {
+	require('theme').get_theme(),
 	require('plugins.configs.whichkey'),
 	require('plugins.configs.nvimtree'),
 	require('plugins.configs.telescope'),
 	require('plugins.configs.treesitter'),
 	require('plugins.configs.lualine'),
 
+	{ 'echasnovski/mini.nvim', version = '*' },
 	{ 'folke/noice.nvim', event = 'VeryLazy', dependencies = { 'MunifTanjim/nui.nvim' } },
 	{ 'folke/twilight.nvim', opts = {} },
 	{ 'folke/zen-mode.nvim', opts = {} },
@@ -43,3 +45,10 @@ require('lazy').setup {
 		{ 'L3MON4D3/LuaSnip' },
 	}},
 }
+
+local mini_specs = require('plugins.configs.mini')
+for _, spec in pairs(mini_specs) do
+	table.insert(plugin_specs, spec)
+end
+
+require('lazy').setup(plugin_specs)

@@ -20,3 +20,6 @@ end
 -- Set Space as the Leader key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+
+-- Select a Theme
+require('theme').set_theme('onedark')
