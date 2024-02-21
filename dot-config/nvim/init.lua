@@ -14,5 +14,5 @@
 require 'settings'
 require 'plugins'
 require 'keymaps'
---require 'lsp'
+require 'lsp'
 require 'autocmd'
