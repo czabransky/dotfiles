@@ -11,7 +11,12 @@
 	It is a good idea to run `:checkhealth` after your first time initiailizing nvim to check for any issues.
 
 --]]
-require 'settings'
+
+require('settings').setup({
+	inherit_vimrc = true,
+	leader = ' ',
+})
+
 require 'plugins'
 require 'keymaps'
 require 'lsp'

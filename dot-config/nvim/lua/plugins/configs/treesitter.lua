@@ -6,11 +6,9 @@ return {
 	}, 
 	config = function()
 		require('nvim-treesitter.configs').setup {
-			ensure_installed = { 'lua', 'vim', 'vimdoc' },
 			auto_install = true,
-			sync_install = true,
+			ensure_installed = { 'lua', 'vim', 'vimdoc' },
 			highlight = { enable = true },
-			indent = { enable = true },
 			incremental_selection = {
 				enable = true,
 				keymaps = {
@@ -20,6 +18,10 @@ return {
 					node_decremental = '<C-M-Space>',
 				},
 			},
+			ignore_install = {},
+			indent = { enable = true },
+			modules = {},
+			sync_install = true,
 		}
 	end
 }

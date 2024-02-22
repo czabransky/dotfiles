@@ -3,7 +3,7 @@ return {
 	branch = '0.1.x',
 	dependencies = {
 		{ 'nvim-lua/plenary.nvim' },
-		-- { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = vim.fn.executable 'make' == 1 },
+		{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = vim.fn.executable 'make' == 1 },
 	},
 	config = function()
 		require('telescope').setup {
@@ -18,7 +18,7 @@ return {
 				}
 			}
 		}
-		--pcall(require('telescope').load_extension, 'fzf')
+		pcall(require('telescope').load_extension, 'fzf')
 
 		local builtin = require('telescope.builtin')
 		local function telescope_live_grep_open_files()

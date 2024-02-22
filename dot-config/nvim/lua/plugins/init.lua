@@ -15,15 +15,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup ({
-	require('theme').get_theme(),
+	require('plugins.configs.theme').onedark(),
+	require('plugins.configs.tree').nvimtree(),
 	require('plugins.configs.whichkey'),
-	require('plugins.configs.nvimtree'),
 	require('plugins.configs.telescope'),
 	require('plugins.configs.treesitter'),
 	require('plugins.configs.lualine'),
 	require('plugins.configs.mini-starter'),
 	require('plugins.configs.mini-sessions'),
-	require('plugins.configs.mini-fuzzy'),
 	require('plugins.configs.mini-comment'),
 
 	{ 'folke/noice.nvim', event = 'VeryLazy', dependencies = { 'MunifTanjim/nui.nvim' } },
@@ -32,8 +31,11 @@ require('lazy').setup ({
 	{ 'folke/trouble.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }, opts = {} },
 	{ 'tpope/vim-surround' },
 
+	-- [[ Fuzzy Finder ]]
+	-- [[ Only enable this if you're unable to install ripgrep ]]
+	--require('plugins.configs.mini-fuzzy'),
 
-	--LSP
+	-- [[ LSP ]]
 	{ 'neovim/nvim-lspconfig', dependencies = {
 		{ 'williamboman/mason.nvim', config = true },
 		{ 'williamboman/mason-lspconfig.nvim' },
@@ -41,7 +43,7 @@ require('lazy').setup ({
 		{ 'folke/neodev.nvim', opts = {} },
 	}},
 
-	--Auto Completion
+	-- [[ Auto Completion ]]
 	{ 'hrsh7th/nvim-cmp', dependencies = {
 		{ 'hrsh7th/cmp-nvim-lsp' },
 		{ 'L3MON4D3/LuaSnip' },

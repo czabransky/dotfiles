@@ -10,6 +10,7 @@ local on_attach = function(_, bufnr)
 		end
 		vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
 	end
+	nmap('<leader>ca', vim.lsp.buf.rename, '[C]ode [A]ction')
 	nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 	nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
 	nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementations')
@@ -23,6 +24,7 @@ end
 -- The server names provided as keys are the lspconfig server names, not
 -- mason's package names, so for example instead of "lua-language-server"
 -- it's "lua_ls".
+-- See: mason-lspconfig-mapping.txt
 local servers = {
 	lua_ls = {
 		Lua = {
@@ -31,6 +33,20 @@ local servers = {
 			diagnostics = { globals = { 'vim' } },
 		},
 	},
+
+	--Debug pylsp settings with the following command:
+	--	enew|put=execute(\"lua print(vim.inspect(vim.lsp.get_active_clients({name='pylsp'})))\")
+	pylsp = {
+		pylsp = {
+			plugins = {
+				pycodestyle = {
+					ignore = { 'W931' },
+					maxLineLength = 100,
+				},
+			},
+		},
+	},
+
 	-- Configuring Java for nvim is proving to be challenging
 	--	see: https://github.com/mfussenegger/nvim-jdtls
 	--java_language_server = {
@@ -62,6 +78,9 @@ require('mason-lspconfig').setup_handlers {
 		}
 	end,
 }
+
+-- Enable LSP Status Information
+require('fidget').setup({})
 
 -- Modify some aesthetics of the LSP popup window. 
 vim.opt.winhighlight = require('cmp').config.window.bordered().winhighlight
