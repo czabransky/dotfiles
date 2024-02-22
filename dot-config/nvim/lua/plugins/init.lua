@@ -31,8 +31,8 @@ require('lazy').setup ({
 	{ 'folke/zen-mode.nvim', opts = {} },
 	{ 'folke/trouble.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }, opts = {} },
 	{ 'tpope/vim-surround' },
-	
-	
+
+
 	--LSP
 	{ 'neovim/nvim-lspconfig', dependencies = {
 		{ 'williamboman/mason.nvim', config = true },

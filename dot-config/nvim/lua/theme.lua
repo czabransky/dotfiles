@@ -1,7 +1,8 @@
 local M = {}
+
 local themes = {
 	onedark = {
-		'navarasu/onedark.nvim', 
+		'navarasu/onedark.nvim',
 		config = function()
 			require('onedark').setup {
 				style = 'dark',
@@ -14,12 +15,12 @@ local themes = {
 	gruvbox = { 'morhetz/gruvbox' },
 }
 
-M.set_theme = function(theme_name) 
+M.set_theme = function(theme_name)
 	M.theme_name = theme_name
 end
 
-M.get_theme = function() 
-	theme = themes[M.theme_name]
+M.get_theme = function()
+	local theme = themes[M.theme_name]
 	theme.lazy = false
 	theme.priority = 1000
 	return theme
