@@ -69,6 +69,7 @@ function M.oil()
 		config = function()
 			require('oil').setup()
 			vim.keymap.set('n', '<leader>tt', function() return require('oil').toggle_float() end, { desc = '[T]oggle [T]ree' })
+			vim.keymap.set('n', '<leader>e', function() return require('oil').toggle_float() end, { desc = 'Oil [E]xplorer' })
 		end
 	}
 end

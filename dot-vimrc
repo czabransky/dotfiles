@@ -43,6 +43,12 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>' <C-^>
 
 " Best Remaps of All Time
+nnoremap gg ggzz
+nnoremap G Gzz
+nnoremap <C-u> <C-u>z z
+nnoremap <C-d> <C-d>zz
+nnoremap n nzzzv
+nnoremap N Nzzzv
 nmap <leader>q :q
 nmap Q gq
 imap jj <Esc>
@@ -54,9 +60,7 @@ vmap <leader>y "+y
 nmap <leader>Y "+Y
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-nnoremap n nzzzv
-nnoremap N Nzzzv
 
 " Misc Mappings
-nnoremap <leader><leader>r :%s//g<Left><Left>
-xnoremap <leader><leader>r :s/\%V/g<Left><Left>
+nnoremap <leader>S :%s//g<Left><Left>
+xnoremap <leader>S :s/\%V/g<Left><Left>
