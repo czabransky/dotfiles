@@ -8,7 +8,7 @@ return {
 	config = function()
 		local starter = require('mini.starter')
 		starter.setup({
-			autoopen = true,
+			autoopen = false,
 			evaluate_single = false,
 			items = {
 				starter.sections.builtin_actions(),
@@ -28,7 +28,7 @@ return {
 		vim.cmd([[ rshada ]])
 
 		-- Despite having autoopen = true above, MiniStarter isn't opening automatically or appearing as a command.
-		-- Invoke the open manually. 
+		-- Invoke the manually. 
 		starter.open()
 	end
 }
