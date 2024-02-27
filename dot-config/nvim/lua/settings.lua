@@ -8,7 +8,9 @@ local function opt_overrides()
 	local options = {
 		clipboard = 'unnamed,unnamedplus',
 		completeopt = 'menuone',
+		mouse = "a",
 		termguicolors = true,
+		signcolumn = "yes",
 	}
 	for key, value in pairs(options) do
 		vim.opt[key] = value
@@ -29,8 +31,6 @@ function M.setup(opts)
 	vim.g.netrw_browse_split = 0
 	vim.g.netrw_banner = 1
 	vim.g.netrw_winsize = 25
-	vim.g.loaded_netrw = 1
-	vim.g.loaded_netrwPlugin = 1
 end
 
 return M

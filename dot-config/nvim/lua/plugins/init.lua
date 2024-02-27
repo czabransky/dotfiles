@@ -16,14 +16,15 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup ({
 	require('plugins.configs.theme').onedark(),
+	require('plugins.configs.dressings'),
 	require('plugins.configs.tree').nvimtree(),
 	require('plugins.configs.whichkey'),
 	require('plugins.configs.telescope'),
 	require('plugins.configs.treesitter'),
 	require('plugins.configs.lualine'),
-	require('plugins.configs.mini-starter'),
 	require('plugins.configs.mini-sessions'),
 	require('plugins.configs.mini-comment'),
+	require('plugins.configs.mini-starter'),
 
 	{ 'folke/noice.nvim', event = 'VeryLazy', dependencies = { 'MunifTanjim/nui.nvim' } },
 	{ 'folke/twilight.nvim', opts = {} },
@@ -41,6 +42,7 @@ require('lazy').setup ({
 		{ 'williamboman/mason-lspconfig.nvim' },
 		{ 'j-hui/fidget.nvim', opts = {} },
 		{ 'folke/neodev.nvim', opts = {} },
+		-- lspkind
 	}},
 
 	-- [[ Auto Completion ]]

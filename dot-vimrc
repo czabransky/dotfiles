@@ -1,5 +1,6 @@
 let mapleader = "\<SPACE>"
 let maplocalleader = "\<SPACE>"
+set breakindent
 set cursorline
 set history=1000
 set ignorecase smartcase
