@@ -1,10 +1,10 @@
 local M = {}
 
-local function setup_netrw()
+local function setup_netrw(val)
 	-- Set to 0 if you're using float.enable = true, otherwise NetRW will appear on startup in non-floating mode. 
 	-- This may or may not be desirable. If you are also using something like mini.starter, then NetRW plugins will interfere. 
-	vim.g.loaded_netrw = 0
-	vim.g.loaded_netrwPlugin = 0
+	vim.g.loaded_netrw = val
+	vim.g.loaded_netrwPlugin = val
 end
 
 function M.nvimtree()
@@ -28,7 +28,7 @@ function M.nvimtree()
 				},
 			})
 			vim.keymap.set('n', '<leader>tt', function() return require('nvim-tree.api').tree.toggle({ find_file = true }) end, { desc = '[T]oggle [T]ree' })
-			setup_netrw()
+			setup_netrw(0)
 		end
 	}
 end
@@ -54,8 +54,22 @@ function M.neotree()
 				popup_border_style = 'rounded',
 			})
 			vim.keymap.set('n', '<leader>tt', '<cmd>Neotree<CR>', { desc = '[T]oggle [T]ree' })
-			setup_netrw()
+			setup_netrw(1)
 		end,
+	}
+end
+
+function M.oil()
+	return {
+		'stevearc/oil.nvim',
+		opts = {},
+		dependencies = {
+			{ 'nvim-tree/nvim-web-devicons' },
+		},
+		config = function()
+			require('oil').setup()
+			vim.keymap.set('n', '<leader>tt', function() return require('oil').toggle_float() end, { desc = '[T]oggle [T]ree' })
+		end
 	}
 end
 

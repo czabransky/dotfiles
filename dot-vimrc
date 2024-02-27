@@ -40,6 +40,7 @@ nmap <CR> :write<CR>
 nnoremap <leader>w, :vertical resize -10<CR>
 nnoremap <leader>w. :vertical resize +10<CR>
 nnoremap <leader>q :q<CR>
+nnoremap <leader>' <C-^>
 
 " Best Remaps of All Time
 nmap <leader>q :q

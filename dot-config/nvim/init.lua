@@ -21,5 +21,4 @@ require('settings').setup({
 
 require 'plugins'
 require 'keymaps'
-require 'lsp'
 require 'autocmd'

@@ -8,6 +8,7 @@ return {
 			['<leader>c'] = { name = '[C]ode' },
 			['<leader>d'] = { name = '[D]ocument' },
 			['<leader>g'] = { name = '[G]it' },
+			['<leader>h'] = { name = '[H]arpoon' },
 			['<leader>s'] = { name = '[S]earch' },
 			['<leader>t'] = {
 				name = '[T]oggle',
