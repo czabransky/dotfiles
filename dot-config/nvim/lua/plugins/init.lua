@@ -28,7 +28,7 @@ require('lazy').setup ({
 	require('plugins.configs.notify'),
 	require('plugins.configs.telescope'),
 	require('plugins.configs.theme').onedark(),
-	require('plugins.configs.tree').oil(),
+	require('plugins.configs.tree').nvimtree(),
 	require('plugins.configs.treesitter'),
 	require('plugins.configs.whichkey'),
 
@@ -36,8 +36,9 @@ require('lazy').setup ({
 	{ 'folke/twilight.nvim', opts = {} },
 	{ 'folke/zen-mode.nvim', opts = {} },
 	{ 'folke/trouble.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }, opts = {} },
-	{ 'tpope/vim-surround' }
+	{ 'tpope/vim-surround' },
 
+	require('plugins.configs.obsidian'),
 
 	-- [[ Fuzzy Finder ]]
 	-- [[ Only enable this if you're unable to install ripgrep ]]

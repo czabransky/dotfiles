@@ -67,7 +67,11 @@ function M.oil()
 			{ 'nvim-tree/nvim-web-devicons' },
 		},
 		config = function()
-			require('oil').setup()
+			require('oil').setup({
+				win_options = {
+					signcolumn = 'yes',
+				},
+			})
 			vim.keymap.set('n', '<leader>tt', function() return require('oil').toggle_float() end, { desc = '[T]oggle [T]ree' })
 			vim.keymap.set('n', '<leader>e', function() return require('oil').toggle_float() end, { desc = 'Oil [E]xplorer' })
 		end
