@@ -70,7 +70,7 @@ return {
 				fields = { 'abbr', 'kind', 'menu' },
 			},
 			experimental = {
-				ghost_text = true,
+				ghost_text = false,
 			}
 		})
 	end

@@ -39,6 +39,7 @@ require('lazy').setup ({
 	{ 'tpope/vim-surround' },
 
 	require('plugins.configs.obsidian'),
+	require('plugins.configs.markdownpreview'),
 
 	-- [[ Fuzzy Finder ]]
 	-- [[ Only enable this if you're unable to install ripgrep ]]

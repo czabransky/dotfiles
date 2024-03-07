@@ -10,6 +10,8 @@ return {
 			auto_install = true,
 			ensure_installed = {
 				'lua',
+				'markdown',
+				'markdown_inline',
 				'python',
 				'vim',
 				'vimdoc',

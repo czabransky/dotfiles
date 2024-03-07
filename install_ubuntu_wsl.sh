@@ -45,3 +45,9 @@ brew install fzf
 curl -s 'https://get.sdkman.io' | bash
 source '$HOME/.sdkman/bin/sdkman-init.sh'
 sdk install java 21.0.2-amzn
+
+# configure wsl-open
+# https://gitlab.com/4U6U57/wsl-open
+mkdir ~/bin
+echo '[[ -e ~/bin ]] && export PATH=$PATH:~/bin' >> ~/.zshrc
+curl -o ~/bin/wsl-open https://raw.githubusercontent.com/4U6U57/wsl-open/master/wsl-open.sh
