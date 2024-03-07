@@ -1,9 +1,3 @@
----
-id: readme
-aliases: []
-tags: []
----
-
 # Dotfiles
 
 This repository maintains my personal configurations for standard tools:
