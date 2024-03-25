@@ -15,6 +15,6 @@ return {
 				w = { '<cmd>Twilight<CR>', '[T]oggle [T]wilight' },
 			},
 			['<leader>w'] = { name = '[W]orkspace', },
-		}, { mode = 'n', prefix = '', noremap = true, nowait = true})
+		}, { mode = 'n', prefix = '', noremap = true, nowait = true })
 	end,
 }

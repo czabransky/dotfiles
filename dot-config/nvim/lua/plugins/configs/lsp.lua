@@ -6,6 +6,7 @@ return {
 		{ 'williamboman/mason-lspconfig.nvim' },
 		{ 'j-hui/fidget.nvim',                opts = {} },
 		{ 'folke/neodev.nvim',                opts = {} },
+		{ 'stevearc/conform.nvim' },
 	},
 	config = function()
 		require('mason').setup()
@@ -20,15 +21,28 @@ return {
 				end
 				vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
 			end
-			nmap('<leader>ca', vim.lsp.buf.rename, '[C]ode [A]ction')
+			nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+			nmap('<leader>cr', vim.lsp.buf.rename, '[C]ode [R]ename')
 			nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 			nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
 			nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementations')
-			nmap('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+			nmap('<leader>dt', require('telescope.builtin').lsp_type_definitions, '[T]ype Definition')
 			nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
 			nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
 			nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 		end
+
+		require('conform').setup({
+			notify_on_error = true,
+			format_on_save = function(bufnr) -- noqa
+				return {
+					timeout = 500,
+				}
+			end,
+			formatters_by_ft = {
+				python = { 'isort' },
+			},
+		})
 
 		-- List all Language Servers to Install:
 		-- The server names provided as keys are the lspconfig server names, not

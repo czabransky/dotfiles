@@ -4,6 +4,7 @@ return {
 	dependencies = {
 		{ 'nvim-lua/plenary.nvim' },
 		{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = vim.fn.executable 'make' == 1 },
+		-- { 'nvim-telescope/telescope-ui-select.nvim' },
 	},
 	config = function()
 		require('telescope').setup {
@@ -19,6 +20,7 @@ return {
 			}
 		}
 		pcall(require('telescope').load_extension, 'fzf')
+		-- pcall(require('telescope').load_extension, 'ui-select')
 
 		local builtin = require('telescope.builtin')
 
@@ -47,6 +49,7 @@ return {
 		vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch Files With [G]rep' })
 		vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
 		vim.keymap.set('n', '<leader>sa', find_all_files, { desc = '[S]earch [A]ll Files' })
+		vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch Current [W]ord' })
 		vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume from Previous State' })
 		vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Search Open [B]uffers' })
 		vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
