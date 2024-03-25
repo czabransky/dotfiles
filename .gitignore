@@ -1,2 +1,2 @@
-dot-config/systemd/user/
+dot-config/systemd/*
 Session.vim
