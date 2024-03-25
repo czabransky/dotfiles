@@ -21,7 +21,21 @@ return {
 		pcall(require('telescope').load_extension, 'fzf')
 
 		local builtin = require('telescope.builtin')
-		local function telescope_live_grep_open_files()
+
+		local function find_all_files()
+			builtin.find_files {
+				prompt_title = 'Find All Files',
+				hidden = true,
+				find_command = { 'rg', '--files', '-uu',
+					'-g', '!.git',
+					'-g', '!lib/',
+					'-g', '!__pycache__/',
+					'-g', '!venv/'
+				},
+			}
+		end
+
+		local function live_grep_open_files()
 			builtin.live_grep {
 				grep_open_files = true,
 				prompt_title = 'Live Grep in Open Files'
@@ -29,9 +43,10 @@ return {
 		end
 
 		vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [T]elescpe Builtin' })
-		vim.keymap.set('n', '<leader>s/', telescope_live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
+		vim.keymap.set('n', '<leader>s/', live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
 		vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch Files With [G]rep' })
 		vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+		vim.keymap.set('n', '<leader>sa', find_all_files, { desc = '[S]earch [A]ll Files' })
 		vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume from Previous State' })
 		vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Search Open [B]uffers' })
 		vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })

@@ -14,6 +14,8 @@
 		[LSP Servers, Linters, Formatters, and Treesitter](https://roobert.github.io/2022/12/03/Extending-Neovim/)
 --]]
 
+require 'debug'
+
 require('settings').setup({
 	inherit_vimrc = true,
 	leader = ' ',

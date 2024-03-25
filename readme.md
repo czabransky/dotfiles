@@ -4,14 +4,17 @@ aliases: []
 tags: []
 ---
 
-# Dotfiles
+# dotfiles
 
 This repository maintains my personal configurations for standard tools:
  - Vim
  - NeoVim
  - IdeaVim
 
+**Note: Keybinds are configured for [this layout.](https://configure.zsa.io/voyager/layouts/Qle9V/Wmoon/0)**  
+
 ## Installation
+
 
 ### Using Stow
 
@@ -31,5 +34,4 @@ ln -s ~/dotfiles/dot-zshrc ~/.zshrc
 ln -s ~/dotfiles/dot-vimrc ~/.vimrc
 ln -s ~/dotfiles/dot-ideavimrc ~/.ideavimrc
 ln -s ~/dotfiles/dot-config ~/.config
-
 ```

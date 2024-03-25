@@ -1,5 +1,6 @@
 return {
-	'hrsh7th/nvim-cmp', dependencies = {
+	'hrsh7th/nvim-cmp',
+	dependencies = {
 		{ 'hrsh7th/cmp-nvim-lsp' },
 		{ 'hrsh7th/cmp-buffer' },
 		{ 'hrsh7th/cmp-path' },
@@ -32,32 +33,33 @@ return {
 				['<C-Space>'] = cmp.mapping.complete({}), -- Open Completion Suggestion
 				['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept Suggestion
 				['<Tab>'] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							cmp.select_next_item()
-						elseif luasnip.expand_or_jumpable() then
-							luasnip.expand_or_jump()
-						else
-							fallback()
-						end
-					end, { 'i', 's' }),
+					if cmp.visible() then
+						cmp.select_next_item()
+					elseif luasnip.expand_or_jumpable() then
+						luasnip.expand_or_jump()
+					else
+						fallback()
+					end
+				end, { 'i', 's' }),
 				['<S-Tab>'] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							cmp.select_next_item()
-						elseif luasnip.jumpable(-1) then
-							luasnip.jump(-1)
-						else
-							fallback()
-						end
-					end, { 'i', 's' }),
+					if cmp.visible() then
+						cmp.select_next_item()
+					elseif luasnip.jumpable(-1) then
+						luasnip.jump(-1)
+					else
+						fallback()
+					end
+				end, { 'i', 's' }),
 
 				['<C-u>'] = cmp.mapping.scroll_docs(4), -- Scroll Up Preview
-				['<C-d>'] = cmp.mapping.scroll_docs(-4), -- Scroll Down Preview
+				['<C-d>'] = cmp.mapping.scroll_docs(-4), -- Scroll Up Preview
 				['<C-c>'] = cmp.mapping.abort(), -- Close Suggestions
 			}),
 			sources = cmp.config.sources({
 				{ name = 'nvim_lsp' },
-				{ name = 'buffer', max_item_count = 5 },
-				{ name = 'path', max_item_count = 3 },
+				{ name = 'buffer',  max_item_count = 5 },
+				{ name = 'path',    max_item_count = 3 },
+				{ name = 'path',    max_item_count = 3 },
 				{ name = 'luasnip', max_item_count = 3 },
 			}),
 			formatting = {
@@ -73,5 +75,13 @@ return {
 				ghost_text = false,
 			}
 		})
+		-- cmp.setup.filetype('py', {
+		-- 	sources = cmp.config.sources({
+		-- 		{ name = 'nvim_lsp' },
+		-- 		{ name = 'buffer',  max_item_count = 5 },
+		-- 		{ name = 'path',    max_item_count = 3 },
+		-- 		{ name = 'path',    max_item_count = 3 },
+		-- 	}),
+		-- })
 	end
 }

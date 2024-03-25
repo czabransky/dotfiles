@@ -17,15 +17,15 @@ return {
 				'vimdoc',
 			},
 			highlight = { enable = true },
-			incremental_selection = {
-				enable = true,
-				keymaps = {
-					init_selection = '<C-Space>',
-					node_incremental = '<C-Space>',
-					scope_incremental = '<C-s>',
-					node_decremental = '<C-M-Space>',
-				},
-			},
+			-- incremental_selection = {
+			-- 	enable = true,
+			-- 	keymaps = {
+			-- 		init_selection = '<C-Space>',
+			-- 		node_incremental = '<C-Space>',
+			-- 		scope_incremental = '<C-s>',
+			-- 		node_decremental = '<C-M-Space>',
+			-- 	},
+			-- },
 			ignore_install = {},
 			indent = { enable = true },
 			modules = {},
@@ -43,7 +43,7 @@ return {
 						['ic'] = '@class.inner',
 					},
 				},
-				move= {
+				move = {
 					enable = true,
 					set_jumps = true,
 					goto_next_start = {

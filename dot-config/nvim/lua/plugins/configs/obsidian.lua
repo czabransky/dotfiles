@@ -1,3 +1,16 @@
+--[[
+	- NeoVim >= 0.8.0 (this plugin uses `vim.fs` which was only added in 0.8).
+	- If you want completion and search features (recommended) you’ll need ripgrep <https://github.com/BurntSushi/ripgrep> to be installed and on your `$PATH`.
+		See ripgrep#installation <https://github.com/BurntSushi/ripgrep> for install options.
+
+	Specific operating systems also require additional dependencies in order to use
+	all of obsidian.nvim’s functionality:
+
+	- **Windows WSL** users need `wsl-open` <https://gitlab.com/4U6U57/wsl-open> for the `:ObsidianOpen` command.
+	- **MacOS** users need `pngpaste` <https://github.com/jcsalterego/pngpaste> (`brew install pngpaste`) for the `:ObsidianPasteImg` command.
+	- **Linux** users need xclip (X11) or wl-clipboard (Wayland) for the `:ObsidianPasteImg` command.
+]]
+
 return {
 	'epwalsh/obsidian.nvim',
 	version = '*',

@@ -1,10 +1,11 @@
 return {
 
-	'neovim/nvim-lspconfig', dependencies = {
-		{ 'williamboman/mason.nvim', config = true },
+	'neovim/nvim-lspconfig',
+	dependencies = {
+		{ 'williamboman/mason.nvim',          config = true },
 		{ 'williamboman/mason-lspconfig.nvim' },
-		{ 'j-hui/fidget.nvim', opts = {} },
-		{ 'folke/neodev.nvim', opts = {} },
+		{ 'j-hui/fidget.nvim',                opts = {} },
+		{ 'folke/neodev.nvim',                opts = {} },
 	},
 	config = function()
 		require('mason').setup()
@@ -39,28 +40,52 @@ return {
 				Lua = {
 					workspace = { checkThirdParty = false },
 					telemetry = { enable = false },
-					diagnostics = {
+					diagnostics = { -- https://luals.github.io/wiki/diagnostics/
 						globals = { 'vim' },
 						undefined_global = false,
 						disable = {
-							'missing-parameters', 'missing-fields' -- LSP reports missing fields for tables which are not required.
+							'missing-parameters', 'missing-fields', -- LSP reports missing fields for tables which are not required.
+							'trailing-space'
 						},
 					},
 				},
 			},
 
 			--Debug pylsp settings with the following command:
-			--	enew|put=execute(\"lua print(vim.inspect(vim.lsp.get_active_clients({name='pylsp'})))\")
+			--	enew|put=execute(\"lua print(vim.inspect(vim.lspo.get_active_clients({name='pylsp'})))\")
+			--	[[ Issues attaching pylsp ]]
+			--	https://github.com/nicolargo/glances/issues/2246
+			--  "[...] solving this by going into my site-packages directory and renaming ujson.cpython-310-x86_64-linux-gnu.so to ujson.so"
 			pylsp = {
 				pylsp = {
 					plugins = {
+						-- flake8 = {
+						-- 	enabled = true,
+						-- },
+						-- pyflakes = {
+						-- 	enabled = false,
+						-- },
 						pycodestyle = {
-							ignore = { 'W931' },
-							maxLineLength = 100,
+							ignore = {
+								'W931',
+								'W503' -- Binary operator occurs before line break
+							},
+							maxLineLength = 150,
 						},
 					},
 				},
 			},
+
+			-- pyright = {
+			-- 	pyright = {
+			-- 	},
+			-- },
+
+			-- ruff_lsp = {
+			-- 	ruff = {
+			-- 		lineLength = 120
+			-- 	},
+			-- },
 
 			-- Configuring Java for nvim is proving to be challenging
 			--	see: https://github.com/mfussenegger/nvim-jdtls
@@ -79,7 +104,7 @@ return {
 
 		-- Add cmp_nvim's additional auto completion to language servers
 		local capabilities = require('cmp_nvim_lsp').default_capabilities(
-		vim.lsp.protocol.make_client_capabilities()
+			vim.lsp.protocol.make_client_capabilities()
 		)
 
 		-- Initialize Handlers for each Langauge Server
@@ -97,7 +122,7 @@ return {
 		-- Enable LSP Status Information
 		require('fidget').setup({})
 
-		-- Modify some aesthetics of the LSP popup window. 
+		-- Modify some aesthetics of the LSP popup window.
 		vim.opt.winhighlight = require('cmp').config.window.bordered().winhighlight
 		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded", })
 		vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded", })
@@ -108,5 +133,42 @@ return {
 			update_in_insert = true,
 			underline = true,
 		}
+
+		-- [[ LSP Attach to Buffer ]]
+		-- Must define a unique buffer name so multiple buffers can attach at the same time
+		local augroups = {}
+		local get_augroup = function(client)
+			if not augroups[client.id] then
+				local name = 'UserLspAttach' .. client.name
+				local id = vim.api.nvim_create_augroup(name, { clear = true })
+				augroups[client.id] = id
+			end
+			return augroups[client.id]
+		end
+
+		vim.api.nvim_create_autocmd('LspAttach', {
+			group = vim.api.nvim_create_augroup('UserLspAttach', { clear = true }),
+			callback = function(args)
+				local client_id = args.data.client_id
+				local client = vim.lsp.get_client_by_id(client_id)
+				local bufnr = args.buf
+				if not client.server_capabilities.documentFormattingProvider then
+					return
+				end
+
+				vim.api.nvim_create_autocmd('BufWritePre', {
+					group = get_augroup(client),
+					buffer = bufnr,
+					callback = function()
+						vim.lsp.buf.format {
+							async = false,
+							filter = function(c)
+								return c.id == client.id
+							end
+						}
+					end
+				})
+			end
+		})
 	end
 }

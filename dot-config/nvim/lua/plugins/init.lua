@@ -40,6 +40,7 @@ require('lazy').setup ({
 
 	require('plugins.configs.obsidian'),
 	require('plugins.configs.markdownpreview'),
+	require('plugins.configs.chatgpt'),
 
 	-- [[ Fuzzy Finder ]]
 	-- [[ Only enable this if you're unable to install ripgrep ]]

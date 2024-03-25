@@ -18,6 +18,10 @@ source $ZSH/oh-my-zsh.sh
 # ZOxide Config
 eval "$(zoxide init zsh)"
 
+# Python Config
+# export PYTHONPATH="${PYTHONPATH}:/home/colin/.local/lib/python3.8/site-packages"
+# export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

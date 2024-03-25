@@ -1,3 +1,6 @@
 .git
 .gitignore
 .*\.sh
+.*\.md
+Session.vim
+
