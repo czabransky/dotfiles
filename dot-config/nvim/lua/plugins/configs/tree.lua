@@ -1,8 +1,8 @@
 local M = {}
 
 local function setup_netrw(val)
-	-- Set to 0 if you're using float.enable = true, otherwise NetRW will appear on startup in non-floating mode. 
-	-- This may or may not be desirable. If you are also using something like mini.starter, then NetRW plugins will interfere. 
+	-- Set to 0 if you're using float.enable = true, otherwise NetRW will appear on startup in non-floating mode.
+	-- This may or may not be desirable. If you are also using something like mini.starter, then NetRW plugins will interfere.
 	vim.g.loaded_netrw = val
 	vim.g.loaded_netrwPlugin = val
 end
@@ -15,8 +15,11 @@ function M.nvimtree()
 		},
 		config = function()
 			require('nvim-tree').setup({
+				git = {
+					ignore = false,
+				},
 				view = {
-					side = "right",
+					side = 'right',
 					float = {
 						-- Set enable to true if prefer a floating file explorer.
 						enable = true,
@@ -26,8 +29,23 @@ function M.nvimtree()
 					},
 					width = 50,
 				},
+				renderer = {
+					icons = {
+						git_placement = 'after',
+						web_devicons = {
+							folder = {
+								enable = true,
+							},
+						},
+					},
+					indent_markers = {
+						enable = false,
+					},
+				},
 			})
-			vim.keymap.set('n', '<leader>tt', function() return require('nvim-tree.api').tree.toggle({ find_file = true }) end, { desc = '[T]oggle [T]ree' })
+			vim.keymap.set('n', '<leader>tt',
+				function() return require('nvim-tree.api').tree.toggle({ find_file = true }) end,
+				{ desc = '[T]oggle [T]ree' })
 			setup_netrw(0)
 		end
 	}
@@ -72,8 +90,10 @@ function M.oil()
 					signcolumn = 'yes',
 				},
 			})
-			vim.keymap.set('n', '<leader>tt', function() return require('oil').toggle_float() end, { desc = '[T]oggle [T]ree' })
-			vim.keymap.set('n', '<leader>e', function() return require('oil').toggle_float() end, { desc = 'Oil [E]xplorer' })
+			vim.keymap.set('n', '<leader>tt', function() return require('oil').toggle_float() end,
+				{ desc = '[T]oggle [T]ree' })
+			vim.keymap.set('n', '<leader>e', function() return require('oil').toggle_float() end,
+				{ desc = 'Oil [E]xplorer' })
 		end
 	}
 end
