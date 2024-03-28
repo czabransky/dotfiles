@@ -16,7 +16,7 @@ function M.nvimtree()
 		config = function()
 			require('nvim-tree').setup({
 				git = {
-					ignore = false,
+					ignore = true, -- non-Git files available in Telescope
 				},
 				view = {
 					side = 'right',
