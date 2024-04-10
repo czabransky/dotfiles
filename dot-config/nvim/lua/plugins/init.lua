@@ -33,7 +33,9 @@ require('lazy').setup({
 	require('plugins.configs.treesitter'),
 	require('plugins.configs.whichkey'),
 
-	{ 'folke/noice.nvim',    dependencies = { 'MunifTanjim/nui.nvim' },        event = 'VeryLazy' },
+	require('plugins.configs.noice'),
+
+	-- { 'folke/noice.nvim',    dependencies = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' }, event = 'VeryLazy', opts = {} },
 	{ 'folke/twilight.nvim', opts = {} },
 	{ 'folke/zen-mode.nvim', opts = {} },
 	{ 'folke/trouble.nvim',  dependencies = { 'nvim-tree/nvim-web-devicons' }, opts = {} },

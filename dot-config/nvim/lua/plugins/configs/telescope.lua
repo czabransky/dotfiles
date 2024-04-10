@@ -44,16 +44,16 @@ return {
 			}
 		end
 
-		vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [T]elescpe Builtin' })
-		vim.keymap.set('n', '<leader>s/', live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
-		vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch Files With [G]rep' })
-		vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
-		vim.keymap.set('n', '<leader>sa', find_all_files, { desc = '[S]earch [A]ll Files' })
-		vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch Current [W]ord' })
-		vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume from Previous State' })
-		vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Search Open [B]uffers' })
-		vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-		vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-		vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]iles' })
+		vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
+		vim.keymap.set('n', '<leader>ft', builtin.builtin, { desc = '[F]ind [T]elescpe Builtin' })
+		vim.keymap.set('n', '<leader>f/', live_grep_open_files, { desc = '[F]ind [/] in Open Files' })
+		vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[F]ind Files With [G]rep' })
+		vim.keymap.set('n', '<leader>fa', find_all_files, { desc = '[F]ind [A]ll Files' })
+		vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = '[F]ind Current [W]ord' })
+		vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[F]ind [R]esume from Previous State' })
+		vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[F]ind Open [B]uffers' })
+		vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[F]ind [D]iagnostics' })
+		vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[F]ind [H]elp' })
+		vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = '[F]ind [G]it [F]iles' })
 	end
 }

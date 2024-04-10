@@ -17,6 +17,7 @@ return {
 		require('luasnip.loaders.from_vscode').lazy_load()
 
 		-- Configure Auto Completion
+		local types = require('cmp.types')
 		cmp.setup({
 			snippet = {
 				expand = function(args)
@@ -28,8 +29,26 @@ return {
 				documentation = cmp.config.window.bordered(),
 			},
 			mapping = cmp.mapping.preset.insert({
-				['<C-k>'] = cmp.mapping.select_prev_item(),
-				['<C-j>'] = cmp.mapping.select_next_item(),
+				['<C-n>'] = {
+				  i = function()
+					if cmp.visible() then
+					  cmp.select_next_item({ behavior = types.cmp.SelectBehavior.Insert })
+					else
+					  cmp.complete()
+					end
+				  end,
+				},
+				['<C-e>'] = {
+				  i = function()
+					if cmp.visible() then
+					  cmp.select_prev_item({ behavior = types.cmp.SelectBehavior.Insert })
+					else
+					  cmp.complete()
+					end
+				  end,
+				},
+				-- ['<C-n>'] = cmp.mapping.select_next_item(),
+				-- ['<C-e>'] = cmp.mapping.select_prev_item(),
 				['<C-Space>'] = cmp.mapping.complete({}), -- Open Completion Suggestion
 				['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept Suggestion
 				['<Tab>'] = cmp.mapping(function(fallback)
@@ -50,9 +69,6 @@ return {
 						fallback()
 					end
 				end, { 'i', 's' }),
-
-				['<C-u>'] = cmp.mapping.scroll_docs(4), -- Scroll Up Preview
-				['<C-d>'] = cmp.mapping.scroll_docs(-4), -- Scroll Up Preview
 				['<C-c>'] = cmp.mapping.abort(), -- Close Suggestions
 			}),
 			sources = cmp.config.sources({

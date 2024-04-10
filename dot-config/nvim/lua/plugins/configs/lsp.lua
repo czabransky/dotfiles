@@ -90,6 +90,13 @@ return {
 				},
 			},
 
+
+			jsonls = {
+				jsonls = {
+				},
+			},
+
+
 			-- pyright = {
 			-- 	pyright = {
 			-- 	},
