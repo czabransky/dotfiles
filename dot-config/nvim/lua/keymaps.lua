@@ -35,8 +35,5 @@ vim.keymap.set('n', '<leader>cn', ':cnext<CR>zz', { desc = 'Navigate to [N]ext Q
 vim.keymap.set('n', '<leader>cp', ':cprevious<CR>zz', { desc = 'Navigate to [P]revious Quickfix Item' })
 vim.keymap.set('n', '<leader>co', ':copen<CR>', { desc = '[O]pen the Quickfix List' })
 vim.keymap.set('n', '<leader>cc', ':cclose<CR>', { desc = '[C]lose the Quickfix List' })
-vim.keymap.set('n', '<leader>cv', '<cmd>vimgrep PeaceChatFeedbackButton **/.py<CR>',
-	{ desc = '[V]imgrep Current Project' })
-
 
 vim.keymap.set('n', '<leader>gg', ':Neogit<CR>', { desc = '[G]it' })
