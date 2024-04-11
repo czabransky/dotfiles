@@ -30,22 +30,22 @@ return {
 			},
 			mapping = cmp.mapping.preset.insert({
 				['<C-n>'] = {
-				  i = function()
-					if cmp.visible() then
-					  cmp.select_next_item({ behavior = types.cmp.SelectBehavior.Insert })
-					else
-					  cmp.complete()
-					end
-				  end,
+					i = function()
+						if cmp.visible() then
+							cmp.select_next_item({ behavior = types.cmp.SelectBehavior.Insert })
+						else
+							cmp.complete()
+						end
+					end,
 				},
-				['<C-e>'] = {
-				  i = function()
-					if cmp.visible() then
-					  cmp.select_prev_item({ behavior = types.cmp.SelectBehavior.Insert })
-					else
-					  cmp.complete()
-					end
-				  end,
+				['<C-p>'] = {
+					i = function()
+						if cmp.visible() then
+							cmp.select_prev_item({ behavior = types.cmp.SelectBehavior.Insert })
+						else
+							cmp.complete()
+						end
+					end,
 				},
 				-- ['<C-n>'] = cmp.mapping.select_next_item(),
 				-- ['<C-e>'] = cmp.mapping.select_prev_item(),
@@ -73,10 +73,12 @@ return {
 			}),
 			sources = cmp.config.sources({
 				{ name = 'nvim_lsp' },
-				{ name = 'buffer',  max_item_count = 5 },
-				{ name = 'path',    max_item_count = 3 },
-				{ name = 'luasnip', max_item_count = 3 },
+				{ name = 'buffer',                max_item_count = 10 },
+				{ name = 'path',                  max_item_count = 3 },
+				{ name = 'luasnip',               max_item_count = 3 },
+				{ name = 'vim-dadbod-completion', max_item_count = 10 },
 			}),
+			
 			formatting = {
 				expandable_indicator = true,
 				format = lspkind.cmp_format({

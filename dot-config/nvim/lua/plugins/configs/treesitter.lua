@@ -13,6 +13,7 @@ return {
 				'markdown',
 				'markdown_inline',
 				'python',
+				'sql',
 				'vim',
 				'vimdoc',
 			},

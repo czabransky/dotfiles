@@ -90,13 +90,6 @@ return {
 				},
 			},
 
-
-			jsonls = {
-				jsonls = {
-				},
-			},
-
-
 			-- pyright = {
 			-- 	pyright = {
 			-- 	},
@@ -116,6 +109,16 @@ return {
 			--		telemetry = { enable = false },
 			--	}
 			--},
+
+			jsonls = {
+				jsonls = {
+				},
+			},
+
+			sqlls = {
+				sqlls = {
+				},
+			},
 		}
 
 		-- Mason will ensure LSPs are installed
