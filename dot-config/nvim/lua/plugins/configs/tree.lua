@@ -92,7 +92,7 @@ function M.oil()
 			})
 			vim.keymap.set('n', '<leader>tt', function() return require('oil').toggle_float() end,
 				{ desc = '[T]oggle [T]ree' })
-			vim.keymap.set('n', '<leader>e', function() return require('oil').toggle_float() end,
+			vim.keymap.set('n', '<leader>te', function() return require('oil').toggle_float() end,
 				{ desc = 'Oil [E]xplorer' })
 		end
 	}

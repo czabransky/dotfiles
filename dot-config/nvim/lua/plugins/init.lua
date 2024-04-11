@@ -34,6 +34,9 @@ require('lazy').setup({
 	require('plugins.configs.noice'),
 	require('plugins.configs.whichkey'),
 
+	{ 'tpope/vim-dadbod' },
+	require('plugins.configs.dadbod-ui'),
+
 	{ 'folke/twilight.nvim', opts = {} },
 	{ 'folke/zen-mode.nvim', opts = {} },
 	{ 'folke/trouble.nvim',  dependencies = { 'nvim-tree/nvim-web-devicons' }, opts = {} },
