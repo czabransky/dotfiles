@@ -73,12 +73,12 @@ return {
 			pylsp = {
 				pylsp = {
 					plugins = {
-						-- flake8 = {
-						-- 	enabled = true,
-						-- },
-						-- pyflakes = {
-						-- 	enabled = false,
-						-- },
+						flake8 = {
+							enabled = false,
+						},
+						pyflakes = {
+							enabled = false,
+						},
 						pycodestyle = {
 							ignore = {
 								'W931',

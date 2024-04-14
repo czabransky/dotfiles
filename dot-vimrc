@@ -1,3 +1,4 @@
+syntax on
 let mapleader = "\<SPACE>"
 let maplocalleader = "\<SPACE>"
 set breakindent

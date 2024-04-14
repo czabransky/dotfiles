@@ -15,6 +15,21 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+	performance = {
+		rtp = {
+			disabled_plugins = {
+				"gzip",
+				"netrwPlugin",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
+			},
+		},
+	},
+	ui = {
+		border = "single",
+	},
 	require('plugins.configs.cmp'),
 	require('plugins.configs.dressings'),
 	require('plugins.configs.neogit'),
@@ -28,7 +43,7 @@ require('lazy').setup({
 	require('plugins.configs.mini-starter'),
 	require('plugins.configs.notify'),
 	require('plugins.configs.telescope'),
-	require('plugins.configs.theme').onedark(),
+	require('plugins.configs.theme').catppuccin(),
 	require('plugins.configs.tree').nvimtree(),
 	require('plugins.configs.treesitter'),
 	require('plugins.configs.noice'),

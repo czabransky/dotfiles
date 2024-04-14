@@ -1,2 +1,3 @@
 dot-config/systemd/
+dot-tmux/plugins/
 Session.vim
