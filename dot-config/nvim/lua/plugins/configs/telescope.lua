@@ -15,6 +15,7 @@ return {
 						['<C-d>'] = false,
 						['<C-j>'] = require('telescope.actions').move_selection_next,
 						['<C-k>'] = require('telescope.actions').move_selection_previous,
+						['<C-q>'] = require('telescope.actions').smart_add_to_qflist + require('telescope.actions').open_qflist,
 					}
 				},
 				layout_strategy = "horizontal",
