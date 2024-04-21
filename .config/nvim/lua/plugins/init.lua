@@ -32,7 +32,6 @@ require('lazy').setup({
 	},
 	require('plugins.configs.cmp'),
 	require('plugins.configs.dressings'),
-	require('plugins.configs.neogit'),
 	require('plugins.configs.gitsigns'),
 	require('plugins.configs.harpoon'),
 	require('plugins.configs.indent_blankline'),
@@ -57,11 +56,8 @@ require('lazy').setup({
 	{ 'folke/trouble.nvim',  dependencies = { 'nvim-tree/nvim-web-devicons' }, opts = {} },
 	{ 'tpope/vim-surround' },
 
+	require('plugins.configs.glow'),
 	require('plugins.configs.obsidian'),
 	require('plugins.configs.markdownpreview'),
 	require('plugins.configs.chatgpt'),
-
-	-- [[ Fuzzy Finder ]]
-	-- [[ Only enable this if you're unable to install ripgrep ]]
-	--require('plugins.configs.mini-fuzzy'),
 })

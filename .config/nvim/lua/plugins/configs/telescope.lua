@@ -9,6 +9,7 @@ return {
 	config = function()
 		require('telescope').setup {
 			defaults = {
+				path_display = { "smart" },
 				mappings = {
 					i = {
 						['<C-u>'] = false,
@@ -21,18 +22,13 @@ return {
 				layout_strategy = "horizontal",
 				layout_config = {
 					prompt_position = 'top',
-					horizontal = {
-						mirror = false,
-					},
-					vertical = {
-						mirror = false,
-					},
+					horizontal = { mirror = false },
+					vertical = { mirror = false },
 				},
 				sorting_strategy = 'ascending',
 			},
 		}
 		pcall(require('telescope').load_extension, 'fzf')
-		-- pcall(require('telescope').load_extension, 'ui-select')
 
 		local builtin = require('telescope.builtin')
 

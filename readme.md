@@ -15,6 +15,11 @@ This repository maintains my personal configurations for standard tools:
 
 ## Installation
 
+### Prerequisites
+- any nerdfont
+- ripgrep
+- python
+
 
 ### Using Stow
 
@@ -35,3 +40,14 @@ ln -s ~/dotfiles/dot-vimrc ~/.vimrc
 ln -s ~/dotfiles/dot-ideavimrc ~/.ideavimrc
 ln -s ~/dotfiles/dot-config ~/.config
 ```
+
+## Useful Tools
+These tools are not required for vim/neovim, but they make for a much better terminal experience!
+- terminal theme (e.g., catppuccin for windows terminal / wsl)
+- tmux
+- fzf
+- eza
+
+
+
+

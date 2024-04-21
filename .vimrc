@@ -22,7 +22,8 @@ set smartindent
 set softtabstop=4
 set tabstop=4
 set termguicolors
-set timeoutlen=200
+set timeout
+set timeoutlen=500
 set updatetime=50
 
 if !isdirectory($HOME.'/.vim')
@@ -41,7 +42,6 @@ nmap <leader>w- :split<CR>
 nmap <CR> :write<CR>
 nnoremap <leader>w, :vertical resize -10<CR>
 nnoremap <leader>w. :vertical resize +10<CR>
-nnoremap <leader>q :q<CR>
 nnoremap <leader>' <C-^>
 
 " Best Remaps of All Time
@@ -51,7 +51,6 @@ nnoremap <C-u> <C-u>z z
 nnoremap <C-d> <C-d>zz
 nnoremap n nzzzv
 nnoremap N Nzzzv
-nmap <leader>q :q
 nmap Q gq
 imap jj <Esc>
 imap jk <Esc>
@@ -61,6 +60,7 @@ nmap <leader>y "+y
 vmap <leader>y "+y
 nmap <leader>Y "+Y
 vmap <leader>Y "+Y
+nmap gp '[v']
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 

@@ -10,12 +10,14 @@ return {
 			auto_install = true,
 			ensure_installed = {
 				'lua',
+				'java',
 				'markdown',
 				'markdown_inline',
 				'python',
 				'sql',
 				'vim',
 				'vimdoc',
+				'xml',
 			},
 			highlight = { enable = true },
 			-- incremental_selection = {
@@ -62,6 +64,12 @@ return {
 					goto_previous_end = {
 						['[M'] = '@function.outer',
 						['[]'] = '@class.outer',
+					},
+					goto_next = {
+						[']f'] = '@function.outer',
+					},
+					goto_previous = {
+						['[f'] = '@function.outer',
 					},
 				},
 			}

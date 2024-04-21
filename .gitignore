@@ -1,3 +1,4 @@
-dot-config/systemd/
-dot-tmux/plugins/
+.config/systemd/
+.tmux/plugins/
+.tmux-*.conf
 Session.vim

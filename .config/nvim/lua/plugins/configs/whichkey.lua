@@ -12,7 +12,9 @@ return {
 			['<leader>s'] = { name = '[S]earch' },
 			['<leader>t'] = {
 				name = '[T]oggle',
-				w = { '<cmd>Twilight<CR>', '[T]oggle [T]wilight' },
+				w = { '<cmd>Twilight<CR>', 'Toggle T[w]ilight' },
+				m = { '<cmd>MarkdownPreview<CR>', 'Toggle [M]arkdown Preview' },
+				g = { '<cmd>Glow<CR>', 'Toggle [G]low' },
 			},
 			['<leader>w'] = { name = '[W]orkspace', },
 		}, { mode = 'n', prefix = '', noremap = true, nowait = true })

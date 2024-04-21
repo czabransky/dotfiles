@@ -11,6 +11,7 @@ local function opt_overrides()
 		mouse = "a",
 		termguicolors = true,
 		signcolumn = "yes",
+		conceallevel = 1,
 	}
 	for key, value in pairs(options) do
 		vim.opt[key] = value

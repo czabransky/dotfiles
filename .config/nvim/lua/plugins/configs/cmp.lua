@@ -38,7 +38,7 @@ return {
 						end
 					end,
 				},
-				['<C-p>'] = {
+				['<C-e>'] = {
 					i = function()
 						if cmp.visible() then
 							cmp.select_prev_item({ behavior = types.cmp.SelectBehavior.Insert })
@@ -47,8 +47,24 @@ return {
 						end
 					end,
 				},
-				-- ['<C-n>'] = cmp.mapping.select_next_item(),
-				-- ['<C-e>'] = cmp.mapping.select_prev_item(),
+				['<C-d>'] = {
+					i = function(fallback)
+						if cmp.visible() then
+							cmp.scroll_docs(4)
+						else
+							fallback()
+						end
+					end,
+				},
+				['<C-u>'] = {
+					i = function(fallback)
+						if cmp.visible() then
+							cmp.scroll_docs(-4)
+						else
+							fallback()
+						end
+					end,
+				},
 				['<C-Space>'] = cmp.mapping.complete({}), -- Open Completion Suggestion
 				['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept Suggestion
 				['<Tab>'] = cmp.mapping(function(fallback)
