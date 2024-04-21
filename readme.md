@@ -18,6 +18,7 @@ This repository maintains my personal configurations for standard tools:
 ### Prerequisites
 - any nerdfont
 - ripgrep
+- fzf
 - python
 
 
@@ -28,25 +29,28 @@ This repository maintains my personal configurations for standard tools:
 ```sh
 git clone https://github.com/czabransky/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-stow -v --dotfiles .
+stow -v .
 ```
 
 ### Manual
 
 ```sh
 git clone https://github.com/czabransky/dotfiles.git ~/dotfiles
-ln -s ~/dotfiles/dot-zshrc ~/.zshrc
-ln -s ~/dotfiles/dot-vimrc ~/.vimrc
-ln -s ~/dotfiles/dot-ideavimrc ~/.ideavimrc
-ln -s ~/dotfiles/dot-config ~/.config
+ln -sf ~/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/.vimrc ~/.vimrc
+ln -sf ~/dotfiles/.ideavimrc ~/.ideavimrc
+ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+ln -sf ~/dotfiles/.tmux ~/.tmux
+ln -sf ~/dotfiles/.config ~/.config
 ```
 
 ## Useful Tools
 These tools are not required for vim/neovim, but they make for a much better terminal experience!
 - terminal theme (e.g., catppuccin for windows terminal / wsl)
-- tmux
-- fzf
+- bat
 - eza
+- tmux
+- lazygit
 
 
 
