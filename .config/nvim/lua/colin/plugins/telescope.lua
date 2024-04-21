@@ -11,8 +11,8 @@ return {
 				path_display = { "smart" },
 				mappings = {
 					i = {
-						['<C-u>'] = false,
-						['<C-d>'] = false,
+						['<C-u>'] = true,
+						['<C-d>'] = true,
 						['<C-j>'] = require('telescope.actions').move_selection_next,
 						['<C-k>'] = require('telescope.actions').move_selection_previous,
 						['<C-q>'] = require('telescope.actions').smart_add_to_qflist + require('telescope.actions').open_qflist,
@@ -36,7 +36,7 @@ return {
 
 		local function find_all_files()
 			builtin.find_files {
-				prompt_title = 'Find All Files',
+				prompt_title = 'Search Files',
 				hidden = true,
 				find_command = { 'rg', '--files', '-uu',
 					'-g', '!.git',
