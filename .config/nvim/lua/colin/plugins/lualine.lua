@@ -54,6 +54,7 @@ end
 return {
 	'nvim-lualine/lualine.nvim',
 	config = function()
+		local lazy_status = require('lazy.status')
 		require('lualine').setup {
 			options = {
 				theme = 'auto',
@@ -105,7 +106,13 @@ return {
 						separator = { left = "", right = "" },
 					},
 				},
-				lualine_x = { { "filetype", icon_only = true } },
+				lualine_x = {
+					{
+						lazy_status.updates,
+						cond = lazy_status.has_updates,
+						color = { fg = '#ff9e64' },
+					},
+					{ "filetype", icon_only = true } },
 				-- luadine_y = {},
 				-- lualine_z = {},
 			},

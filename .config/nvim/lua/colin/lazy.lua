@@ -15,6 +15,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+	checker = {
+		enabled = true,
+		notify = false,
+	},
 	performance = {
 		rtp = {
 			disabled_plugins = {
@@ -30,6 +34,7 @@ require('lazy').setup({
 	ui = {
 		border = "single",
 	},
+
 	require('colin.plugins.chatgpt'),
 	require('colin.plugins.cmp'),
 	require('colin.plugins.dadbod'),
@@ -50,6 +55,7 @@ require('lazy').setup({
 	require('colin.plugins.obsidian'),
 	require('colin.plugins.telescope'),
 	require('colin.plugins.theme').catppuccin(),
+	require('colin.plugins.todo-comments'),
 	require('colin.plugins.tree').nvimtree(),
 	require('colin.plugins.treesitter'),
 	require('colin.plugins.trouble'),
