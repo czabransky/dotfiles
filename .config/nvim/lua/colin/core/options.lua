@@ -11,11 +11,15 @@ local function opt_overrides()
 		mouse = "a",
 		termguicolors = true,
 		signcolumn = "yes",
+		background = "dark",
 		conceallevel = 1,
 	}
 	for key, value in pairs(options) do
 		vim.opt[key] = value
 	end
+	vim.g.netrw_browse_split = 0
+	vim.g.netrw_banner = 1
+	vim.g.netrw_winsize = 25
 end
 
 local function leader(key)
@@ -29,9 +33,6 @@ function M.setup(opts)
 	end
 	opt_overrides()
 	leader(opts.leader)
-	vim.g.netrw_browse_split = 0
-	vim.g.netrw_banner = 1
-	vim.g.netrw_winsize = 25
 end
 
 return M
