@@ -4,7 +4,7 @@ return {
 	dependencies = {
 		{ 'nvim-lua/plenary.nvim' },
 		{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = vim.fn.executable 'make' == 1 },
-		-- { 'nvim-telescope/telescope-ui-select.nvim' },
+		{ 'nvim-telescope/telescope-ui-select.nvim' },
 	},
 	config = function()
 		require('telescope').setup {
@@ -27,8 +27,19 @@ return {
 				},
 				sorting_strategy = 'ascending',
 			},
+			extensions = {
+				["ui-select"] = {
+					require("telescope.themes").get_dropdown {
+						-- even more opts
+					}
+				}
+			}
 		}
+
+
 		pcall(require('telescope').load_extension, 'fzf')
+		require("telescope").load_extension("notify")
+		require("telescope").load_extension("ui-select")
 
 		local builtin = require('telescope.builtin')
 
@@ -63,6 +74,5 @@ return {
 		vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
 		vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
 		vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]iles' })
-		require("telescope").load_extension("notify")
 	end
 }
