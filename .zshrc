@@ -5,10 +5,13 @@ export XDG_CONFIG_HOME=~/.config
 export EDITOR='nvim'
 export VISUAL='nvim'
 
+IGNOREEOF=10   # shell only exists after the 10th consecutive ctrl-d
+setopt ignoreeof # should work for zsh, same as IGNOREEOF=10
+
 # aliases
 alias c='clear'
 alias n='nvim'
-alias gg='lazygit'
+alias lg='lazygit'
 
 # Homebrew Config
 export PATH=/home/linuxbrew/.linuxbrew/Homebrew/bin:$PATH
@@ -49,6 +52,7 @@ _fzf_comprun() {
 		cd)				fzf --preview 'eza --tree --level=1 --color=always {} | head -200' "$@" ;;
 		z)				fzf --preview 'eza --tree --level=1 --color=always {} | head -200' "$@" ;;
 		export|unset)	fzf --preview "eval 'echo $' {}" "$@" ;;
+		echo)			fzf --preview "eval 'echo $' {}" "$@" ;;
 		ssh)			fzf --preview "dig {}" "$@" ;;
 		*)				fzf --preview "bat -n --color=always --line-range :500 {}" "$@" ;;
 	esac
