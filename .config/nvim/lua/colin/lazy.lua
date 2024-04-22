@@ -62,6 +62,7 @@ require('lazy').setup({
 	require('colin.plugins.trouble'),
 	require('colin.plugins.twilight'),
 	require('colin.plugins.vim-surround'),
+	require('colin.plugins.vim-tmux-navigator'),
 	require('colin.plugins.whichkey'),
 	require('colin.plugins.zen-mode'),
 })
