@@ -16,6 +16,13 @@ return {
 					["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
 				},
 			},
+			views = {
+				mini = {
+					win_options = {
+						winblend = 0,
+					},
+				},
+			},
 		})
 		vim.keymap.set({ "n", "i", "s" }, "<c-s>", function()
 			if not require("noice.lsp").scroll(4) then

@@ -4,7 +4,6 @@ return {
 	dependencies = {
 		{ 'williamboman/mason.nvim',          config = true },
 		{ 'williamboman/mason-lspconfig.nvim' },
-		{ 'j-hui/fidget.nvim',                opts = {} },
 		{ 'folke/neodev.nvim',                opts = {} },
 		{ 'stevearc/conform.nvim' },
 	},
@@ -143,8 +142,6 @@ return {
 			end,
 		}
 
-		-- Enable LSP Status Information
-		require('fidget').setup({})
 
 		-- Modify some aesthetics of the LSP popup window.
 		vim.opt.winhighlight = require('cmp').config.window.bordered().winhighlight
