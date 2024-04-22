@@ -15,6 +15,7 @@ return {
 				w = { '<cmd>Twilight<CR>', 'Toggle T[w]ilight' },
 				m = { '<cmd>MarkdownPreview<CR>', 'Toggle [M]arkdown Preview' },
 				g = { '<cmd>Glow<CR>', 'Toggle [G]low' },
+				r = { '<cmd>TransparentToggle<CR>', 'Toggle T[r]ansparent' },
 			},
 			['<leader>w'] = { name = '[W]orkspace', },
 		}, { mode = 'n', prefix = '', noremap = true, nowait = true })

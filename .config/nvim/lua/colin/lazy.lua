@@ -56,6 +56,7 @@ require('lazy').setup({
 	require('colin.plugins.telescope'),
 	require('colin.plugins.theme').catppuccin(),
 	require('colin.plugins.todo-comments'),
+	require('colin.plugins.transparent'),
 	require('colin.plugins.tree').nvimtree(),
 	require('colin.plugins.treesitter'),
 	require('colin.plugins.trouble'),

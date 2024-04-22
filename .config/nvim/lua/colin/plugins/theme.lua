@@ -15,6 +15,23 @@ function M.catppuccin()
 	}
 end
 
+function M.everforest()
+	return {
+		"neanias/everforest-nvim",
+		version = false,
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.g.everforest_terminal_colors = 1
+			vim.g.everforest_background = 'medium'
+			vim.g.everforest_enable_italic = 1
+			vim.g.everforest_better_performance = 1
+			vim.g.everforest_cursor = 'aqua'
+			vim.cmd [[colorscheme everforest]]
+		end
+	}
+end
+
 function M.gruvbox()
 	return {
 		'morhetz/gruvbox',
