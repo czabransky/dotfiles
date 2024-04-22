@@ -1,6 +1,15 @@
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export XDG_CONFIG_HOME=~/.config
+export EDITOR='nvim'
+export VISUAL='nvim'
+
+# aliases
+alias c='clear'
+alias n='nvim'
+alias gg='lazygit'
+
 # Homebrew Config
 export PATH=/home/linuxbrew/.linuxbrew/Homebrew/bin:$PATH
 export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
@@ -14,13 +23,6 @@ plugins=(
     zsh-autosuggestions
 )
 source $ZSH/oh-my-zsh.sh
-
-export EDITOR='nvim'
-export VISUAL='nvim'
-
-# aliases
-alias c='clear'
-alias n='nvim'
 
 # zoxide config
 eval "$(zoxide init zsh)"
