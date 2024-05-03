@@ -8,6 +8,11 @@ vim.keymap.set("n", "<esc>", function()
 end, { silent = true, desc = "Remove Search Highlighting, Dismiss Popups" })
 
 -- [[ Diagnostics ]]
+vim.keymap.set('n', '<leader>e', function()
+	vim.diagnostic.goto_next({})
+	vim.api.nvim_feedkeys('zz', 'n', false)
+end, { desc = 'Go to Next Diagnostic' })
+
 vim.keymap.set('n', ']d', function()
 	vim.diagnostic.goto_next({})
 	vim.api.nvim_feedkeys('zz', 'n', false)
