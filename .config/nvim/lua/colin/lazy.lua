@@ -35,6 +35,7 @@ require('lazy').setup({
 		border = "single",
 	},
 
+	require('colin.plugins.alpha'),
 	require('colin.plugins.chatgpt'),
 	require('colin.plugins.cmp'),
 	require('colin.plugins.dadbod'),
@@ -49,8 +50,8 @@ require('lazy').setup({
 	require('colin.plugins.lualine'),
 	require('colin.plugins.markdownpreview'),
 	require('colin.plugins.mini-comment'),
-	require('colin.plugins.mini-sessions'),
-	require('colin.plugins.mini-starter'),
+	-- require('colin.plugins.mini-sessions'),
+	-- require('colin.plugins.mini-starter'),
 	require('colin.plugins.noice'),
 	require('colin.plugins.notify'),
 	require('colin.plugins.obsidian'),
