@@ -39,6 +39,7 @@ require('lazy').setup({
 	require('colin.plugins.cmp'),
 	require('colin.plugins.dadbod'),
 	require('colin.plugins.dadbod-ui'),
+	require('colin.plugins.dap'),
 	require('colin.plugins.dressings'),
 	require('colin.plugins.gitsigns'),
 	require('colin.plugins.glow'),

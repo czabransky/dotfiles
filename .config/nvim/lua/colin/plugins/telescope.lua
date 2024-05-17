@@ -64,6 +64,7 @@ return {
 		vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = '[S]earch Open [B]uffers' })
 		vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
 		vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
+		vim.keymap.set('n', '<leader>sn', '<cmd>NoiceTelescope<CR>', { desc = '[S]earch [N]oice' })
 		vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]iles' })
 	end
 }

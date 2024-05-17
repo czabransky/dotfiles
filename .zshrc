@@ -45,6 +45,8 @@ export FZF_DEFAULT_OPTS=" \
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --level=1 --color=always {} | head -200'"
 
+bindkey -s '^e' 'nvim $(fzf)\n'
+
 _fzf_comprun() {
 	local command=$1
 	shift

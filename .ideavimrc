@@ -10,6 +10,7 @@ source ~/.vimrc
 
 set noerrorbells
 set visualbell
+set notimeout " whichkey should stay on screen
 
 Plug 'nerdtree'
 " https://github.com/preservim/nerdtree
@@ -51,7 +52,7 @@ set which-key
 " https://github.com/TheBlob42/idea-which-key
 let g:WhichKey_ShowVimActions = "false"
 let g:WhichKey_ShowTypedSequence = "true"
-let g:WhichKey_DefaultDelay = 0
+let g:WhichKey_DefaultDelay = 200
 let g:WhichKey_ProcessUnknownMappings = "false"
 let g:WhichKey_KeyColor = "#88d8b0"
 let g:WhichKey_KeyStyle = "none"
