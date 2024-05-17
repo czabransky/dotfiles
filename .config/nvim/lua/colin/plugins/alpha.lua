@@ -19,6 +19,7 @@ return {
 			"  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
 			"                                                     ",
 		}
+		-- dashboard.section.header.opts.hl = "tag"
 
 		-- Set menu
 		dashboard.section.buttons.val = {
