@@ -17,7 +17,7 @@ vim.opt.rtp:prepend(lazypath) -- noqa
 require('lazy').setup({
 	checker = {
 		enabled = true,
-		notify = false,
+		notify = true,
 	},
 	performance = {
 		rtp = {
@@ -61,6 +61,7 @@ require('lazy').setup({
 	require('colin.plugins.treesitter'),
 	require('colin.plugins.trouble'),
 	require('colin.plugins.twilight'),
+	require('colin.plugins.screenkey'),
 	require('colin.plugins.vim-surround'),
 	require('colin.plugins.vim-tmux-navigator'),
 	require('colin.plugins.whichkey'),

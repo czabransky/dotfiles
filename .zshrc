@@ -1,10 +1,27 @@
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 export XDG_CONFIG_HOME=~/.config
 export EDITOR='nvim'
 export VISUAL='nvim'
 
+# keybindings
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
+# history
+HISTSIZE=5000
+HISTFIRLE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+# shell settings
 IGNOREEOF=10   # shell only exists after the 10th consecutive ctrl-d
 setopt ignoreeof # should work for zsh, same as IGNOREEOF=10
 
@@ -24,6 +41,8 @@ ZSH_THEME="cloud-mini" # set by `omz`
 plugins=(
     git
     zsh-autosuggestions
+	zsh-completions
+	zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
 

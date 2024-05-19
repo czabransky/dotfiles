@@ -18,6 +18,7 @@ return {
 				r = { '<cmd>TransparentToggle<CR>', 'Toggle T[r]ansparent' },
 				d = { "<cmd>lua require('dapui').toggle()<CR>", 'Toggle [D]AP UI' },
 				b = { '<cmd>DBUIToggle<CR>', 'Toggle Dad[b]od UI' },
+				s = { '<cmd>Screenkey<CR>', 'Toggle [S]creenkey' },
 			},
 			['<leader>w'] = { name = '[W]orkspace', },
 		}, { mode = 'n', prefix = '', noremap = true, nowait = true })
