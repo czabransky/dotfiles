@@ -12,6 +12,7 @@ set nohlsearch
 set noswapfile
 set nowrap
 set number
+set mouse=a
 set relativenumber
 set scrolloff=8
 set shiftwidth=4

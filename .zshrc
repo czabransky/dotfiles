@@ -34,7 +34,8 @@ eval "$(zoxide init zsh)"
 export BAT_THEME="Catppuccin Frappe"
 
 # configure eza
-alias l="eza --color=always --long --all --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias l="eza --color=always --long --all --git --icons=always --no-time"
+alias etree="eza --tree --level=2 --all --git --icons=always --color=always"
 
 # set up fzf keybindings and fuzzy completion
 eval "$(fzf --zsh)"
@@ -43,7 +44,7 @@ export FZF_DEFAULT_OPTS=" \
 --color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf \
 --color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284"
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
-export FZF_ALT_C_OPTS="--preview 'eza --tree --level=1 --color=always {} | head -200'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --level=1 --all --git --icons=always --color=always {} | head -200'"
 
 bindkey -s '^e' 'nvim $(fzf)\n'
 

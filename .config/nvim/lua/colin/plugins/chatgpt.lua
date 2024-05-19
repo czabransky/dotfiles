@@ -11,8 +11,6 @@ return {
 		require('chatgpt').setup({
 			chat = {
 				welcome_message = 'How can I help?',
-
-
 			},
 			vim.keymap.set('n', '<leader>cg', '<cmd>ChatGPT<CR>', { desc = 'ChatGPT' })
 		})
