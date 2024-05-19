@@ -12,7 +12,7 @@ if not vim.loop.fs_stat(lazypath) then
 		lazypath,
 	}
 end
-vim.opt.rtp:prepend(lazypath)
+vim.opt.rtp:prepend(lazypath) -- noqa
 
 require('lazy').setup({
 	checker = {
@@ -50,8 +50,6 @@ require('lazy').setup({
 	require('colin.plugins.lualine'),
 	require('colin.plugins.markdownpreview'),
 	require('colin.plugins.mini-comment'),
-	-- require('colin.plugins.mini-sessions'),
-	-- require('colin.plugins.mini-starter'),
 	require('colin.plugins.noice'),
 	require('colin.plugins.notify'),
 	require('colin.plugins.obsidian'),
