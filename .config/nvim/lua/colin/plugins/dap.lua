@@ -82,6 +82,12 @@ return {
 		end
 
 		-- Python
+		--[[
+mkdir .virtualenvs
+cd .virtualenvs
+python -m venv debugpy
+debugpy/bin/python -m pip install debugpy
+		--]]
 		require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
 		require('dap-python').test_runner = 'pytest'
 	end
