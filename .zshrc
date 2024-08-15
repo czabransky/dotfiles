@@ -94,16 +94,21 @@ _fzf_comprun() {
 function zz() {
 	dir=`zoxide query "$1" |
 		fzf --ansi --border --reverse`
-	cd $dir
+    if [[ -n $dir ]]; then
+		cd $dir
+    fi
 }
 
-function rem() {
+# connect to a remote machine using ~/ssh/hosts
+function con() {
 	selection=`cat ~/ssh/hosts |
 		fzf --ansi --border --reverse --delimiter=: \
 		--preview 'dig {2}'` 	
     host=`echo "$selection" | awk -F: '{print $2}'`
-	echo $host
-	# ssh $host
+    host=`echo "$host" | awk '{$1=$1;print}'` # strip whitespace
+	if [[ -n $host ]]; then
+		ssh $host
+	fi
 }
 
 # nvim find file: search by extension for keywords
