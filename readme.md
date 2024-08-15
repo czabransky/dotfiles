@@ -47,6 +47,7 @@ ln -sf ~/dotfiles/.config ~/.config
 ## Useful Tools
 These tools are not required for vim/neovim, but they make for a much better terminal experience!
 - terminal theme (e.g., catppuccin for windows terminal / wsl)
+- fd
 - bat
 - eza
 - tmux

@@ -26,7 +26,6 @@ IGNOREEOF=10   # shell only exists after the 10th consecutive ctrl-d
 setopt ignoreeof # should work for zsh, same as IGNOREEOF=10
 
 # aliases
-alias c='clear'
 alias n='nvim'
 alias lg='lazygit'
 
@@ -59,6 +58,7 @@ export BAT_THEME="Catppuccin Frappe"
 alias l="eza --color=always --long --all --git --icons=always --no-time"
 alias etree="eza --tree --level=2 --all --git --icons=always --color=always"
 
+# fzf
 # set up fzf keybindings and fuzzy completion
 eval "$(fzf --zsh)"
 export FZF_DEFAULT_OPTS=" \
@@ -68,7 +68,14 @@ export FZF_DEFAULT_OPTS=" \
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --level=1 --all --git --icons=always --color=always {} | head -200'"
 
-bindkey -s '^e' 'nvim $(fzf)\n'
+# fzf current directory and open nvim to the selected file
+bindkey -s '^n' 'nvim $(fzf)\n'
+
+_fzf_complete_echo() {
+	_fzf_complete --reverse -- "$@" < <(
+		printenv
+	)
+}
 
 _fzf_comprun() {
 	local command=$1
@@ -83,9 +90,36 @@ _fzf_comprun() {
 	esac
 }
 
-# Python Config
-# export PYTHONPATH="${PYTHONPATH}:/home/colin/.local/lib/python3.8/site-packages"
-# export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages"
+# use fzf to find zoxide results and cd to selecton
+function zz() {
+	dir=`zoxide query "$1" |
+		fzf --ansi --border --reverse`
+	cd $dir
+}
+
+function rem() {
+	selection=`cat ~/ssh/hosts |
+		fzf --ansi --border --reverse --delimiter=: \
+		--preview 'dig {2}'` 	
+    host=`echo "$selection" | awk -F: '{print $2}'`
+	echo $host
+	# ssh $host
+}
+
+# nvim find file: search by extension for keywords
+# usage: nff md install
+function nff() {
+    file_line=`rg "$2" -i --no-heading --column --color ansi -g \*.$1 | 
+        fzf --ansi --border --reverse --delimiter=: \
+        --preview 'bat --color always {1} -n -H {2}' \
+        --preview-window 'top,80%,border-bottom,+{2}+3/3'`
+
+    file=`echo "$file_line" | gawk -F: '{print $1}'`
+    line=`echo "$file_line" | gawk -F: '{print $2}'`
+    if [[ -n $file ]]; then
+        nvim + "$line" "$file"
+    fi
+}
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
