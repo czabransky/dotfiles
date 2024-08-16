@@ -115,7 +115,7 @@ _fzf_comprun() {
 
 # use fzf to find zoxide results and cd to selecton
 function zz() {
-	dir=`zoxide query "$1" |
+	dir=`zoxide query --list "$1" |
 		fzf --ansi --border --reverse`
     if [[ -n $dir ]]; then
 		cd $dir
