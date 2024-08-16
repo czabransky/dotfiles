@@ -85,7 +85,7 @@ _fzf_complete_ssh() {
 }
 
 _fzf_complete_ssh_post() {
-	awk -F: -v user="$USER" '{gsub(/[[:space:]]/,"",$2); printf "%s@%s", user, $2}'
+	awk -F: -v user="$USER" '{gsub(/[[:space:]]/,"",$1); printf "%s@%s", user, $1}'
 }
 
 _fzf_complete_scp() {
@@ -95,7 +95,7 @@ _fzf_complete_scp() {
 }
 
 _fzf_complete_scp_post() {
-	awk -F: -v user="$USER" '{gsub(/[[:space:]]/,"",$2); printf "%s@%s:/", user, $2}'
+	awk -F: -v user="$USER" '{gsub(/[[:space:]]/,"",$1); printf "%s@%s:/", user, $1}'
 }
 
 
@@ -107,8 +107,8 @@ _fzf_comprun() {
 		z)				fzf --preview 'eza --tree --level=1 --color=always {} | head -200' "$@" ;;
 		export|unset)	fzf --preview "eval 'echo $' {}" "$@" ;;
 		echo)			fzf --preview "eval 'echo $' {}" "$@" ;;
-		ssh)			fzf --delimiter=: --preview "dig {2}" "$@" ;;
-		scp)			fzf --delimiter=: --preview "dig {2}" "$@" ;;
+		ssh)			fzf --delimiter=: --preview "dig {1}" "$@" ;;
+		scp)			fzf --delimiter=: --preview "dig {1}" "$@" ;;
 		*)				fzf --preview "bat -n --color=always --line-range :500 {}" "$@" ;;
 	esac
 }
