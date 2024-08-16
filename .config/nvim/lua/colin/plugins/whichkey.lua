@@ -19,6 +19,7 @@ return {
 				d = { "<cmd>lua require('dapui').toggle()<CR>", 'Toggle [D]AP UI' },
 				b = { '<cmd>DBUIToggle<CR>', 'Toggle Dad[b]od UI' },
 				s = { '<cmd>Screenkey<CR>', 'Toggle [S]creenkey' },
+				q = { '<cmd>QuickScopeToggle<CR>', 'Toggle [Q]uick-Scope' },
 			},
 			['<leader>w'] = { name = '[W]orkspace', },
 		}, { mode = 'n', prefix = '', noremap = true, nowait = true })

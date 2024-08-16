@@ -26,6 +26,7 @@ IGNOREEOF=10   # shell only exists after the 10th consecutive ctrl-d
 setopt ignoreeof # should work for zsh, same as IGNOREEOF=10
 
 # aliases
+alias cat='bat'
 alias n='nvim'
 alias lg='lazygit'
 

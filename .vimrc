@@ -68,3 +68,6 @@ vnoremap K :m '<-2<CR>gv=gv
 " Misc Mappings
 nnoremap <leader>S :%s//g<Left><Left>
 xnoremap <leader>S :s/\%V/g<Left><Left>
+
+" Plugin Globals
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
