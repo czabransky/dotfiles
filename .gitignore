@@ -1,3 +1,4 @@
+.config/wslu/
 .config/systemd/
 .config/tmux/plugins/
 Session.vim

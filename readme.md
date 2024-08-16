@@ -6,7 +6,7 @@ tags: []
 
 # dotfiles
 
-This repository maintains my personal configurations for standard tools:
+This repository maintains my personal configurations for:
  - Vim
  - NeoVim
  - IdeaVim
@@ -52,7 +52,5 @@ These tools are not required for vim/neovim, but they make for a much better ter
 - eza
 - tmux
 - lazygit
-
-
-
-
+- direnv
+- direnvx (for secrets)
