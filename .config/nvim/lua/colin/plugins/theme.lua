@@ -73,7 +73,7 @@ function M.tokyonight()
 	return {
 		"folke/tokyonight.nvim",
 		lazy = false,
-		priority = 1000,
+		priority = 1001,
 		opts = {},
 		config = function()
 			vim.cmd.colorscheme 'tokyonight-night'
