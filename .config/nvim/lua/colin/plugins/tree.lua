@@ -45,7 +45,7 @@ function M.nvimtree()
 			})
 			vim.keymap.set('n', '<leader>tt',
 				function() return require('nvim-tree.api').tree.toggle({ find_file = true }) end,
-				{ desc = '[T]oggle [T]ree' })
+				{ desc = 'Toggle Tree' })
 			setup_netrw(0)
 		end
 	}
@@ -71,7 +71,7 @@ function M.neotree()
 				enable_git_status = true,
 				popup_border_style = 'rounded',
 			})
-			vim.keymap.set('n', '<leader>tt', '<cmd>Neotree<CR>', { desc = '[T]oggle [T]ree' })
+			vim.keymap.set('n', '<leader>tt', '<cmd>Neotree<CR>', { desc = 'Toggle Tree' })
 			setup_netrw(1)
 		end,
 	}
@@ -91,9 +91,9 @@ function M.oil()
 				},
 			})
 			vim.keymap.set('n', '<leader>tt', function() return require('oil').toggle_float() end,
-				{ desc = '[T]oggle [T]ree' })
+				{ desc = 'Toggle Tree' })
 			vim.keymap.set('n', '<leader>te', function() return require('oil').toggle_float() end,
-				{ desc = 'Oil [E]xplorer' })
+				{ desc = 'Oil Explorer' })
 		end
 	}
 end

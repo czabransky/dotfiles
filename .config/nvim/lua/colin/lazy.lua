@@ -54,6 +54,7 @@ require('lazy').setup({
 	require('colin.plugins.notify'),
 	require('colin.plugins.obsidian'),
 	require('colin.plugins.quick-scope'),
+	require('colin.plugins.render-markdown'),
 	require('colin.plugins.screenkey'),
 	require('colin.plugins.telescope'),
 	require('colin.plugins.theme').catppuccin(),

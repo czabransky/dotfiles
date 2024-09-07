@@ -4,7 +4,10 @@ return {
 	config = function()
 		require('glow').setup({
 			border = 'rounded',
-			style = "dark"
+			style = "dark",
+			width = 300,
+			width_ratio = 0.9,
+			height_ratio = 0.9,
 		})
 	end,
 }

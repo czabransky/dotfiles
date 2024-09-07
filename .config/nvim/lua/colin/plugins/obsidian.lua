@@ -49,7 +49,9 @@ return {
 					opts = { noremap = false, expr = false, buffer = true },
 				},
 			},
-
+			ui = {
+				enable = false
+			},
 		})
 	end
 }

@@ -54,9 +54,9 @@ return {
 
 		vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint, { desc = 'Toggle Breakpoint' })
 		vim.keymap.set('n', '<leader>gb', dap.run_to_cursor, { desc = 'Debug to Cursor' })
-		vim.keymap.set('n', '<leader>?', function()
-			require('dapui').eval(nil, { enter = true })
-		end, { desc = 'Evaluate Symbol under Cursor' })
+		-- vim.keymap.set('n', '<leader>?', function()
+		-- 	require('dapui').eval(nil, { enter = true })
+		-- end, { desc = 'Evaluate Symbol under Cursor' })
 		vim.keymap.set('n', '<F1>', dap.continue, { desc = 'Debug: Continue' })
 		vim.keymap.set('n', '<F2>', dap.step_into, { desc = 'Debug: Step Into' })
 		vim.keymap.set('n', '<F3>', dap.step_over, { desc = 'Debug: Step Over' })
