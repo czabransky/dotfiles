@@ -54,17 +54,18 @@ return {
 			}
 		end
 
-		vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
-		vim.keymap.set('n', '<leader>st', builtin.builtin, { desc = '[S]earch [T]elescpe Builtin' })
-		vim.keymap.set('n', '<leader>s/', live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
-		vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch Files With [G]rep' })
-		vim.keymap.set('n', '<leader>sa', find_all_files, { desc = '[S]earch [A]ll Files' })
-		vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch Current [W]ord' })
-		vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume from Previous State' })
-		vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = '[S]earch Open [B]uffers' })
-		vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-		vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-		vim.keymap.set('n', '<leader>sn', '<cmd>NoiceTelescope<CR>', { desc = '[S]earch [N]oice' })
-		vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]iles' })
+		vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Search Files' })
+		vim.keymap.set('n', '<leader>st', builtin.builtin, { desc = 'Search Telescpe Builtin' })
+		vim.keymap.set('n', '<leader>sc', builtin.commands, { desc = 'Search Commands' })
+		vim.keymap.set('n', '<leader>s/', live_grep_open_files, { desc = 'Search / in Open Files' })
+		vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Search Files With Grep' })
+		vim.keymap.set('n', '<leader>sa', find_all_files, { desc = 'Search All Files' })
+		vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = 'Search Current Word' })
+		vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Search Resume from Previous State' })
+		vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Search Open Buffers' })
+		vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Search Diagnostics' })
+		vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Search Help' })
+		vim.keymap.set('n', '<leader>sn', '<cmd>NoiceTelescope<CR>', { desc = 'Search Noice' })
+		vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search Git Files' })
 	end
 }
