@@ -15,14 +15,14 @@ vim.api.nvim_create_autocmd("FileType", {
 -- })
 
 -- set colorscheme for markdown files
-vim.api.nvim_create_autocmd({ 'BufEnter' }, {
-	desc = 'set colorscheme when rendering markdown files',
-	group = defaults,
-	pattern = { '*.md' },
-	callback = function()
-		vim.cmd [[ colorscheme tokyonight-night ]]
-	end
-})
+-- vim.api.nvim_create_autocmd({ 'BufEnter' }, {
+-- 	desc = 'set colorscheme when rendering markdown files',
+-- 	group = defaults,
+-- 	pattern = { '*.md' },
+-- 	callback = function()
+-- 		vim.cmd [[ colorscheme tokyonight-night ]]
+-- 	end
+-- })
 
 -- [[ Highlight on Yank ]]
 -- see `:help vim.highlight.on_yank()`

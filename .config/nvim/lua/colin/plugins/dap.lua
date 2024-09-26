@@ -39,6 +39,12 @@ return {
 			},
 		})
 
+		dap.adapters.coreclr = {
+			type = 'executable',
+			command = '/usr/local/bin/netcoredbg',
+			args = { '--interpreter=vscode' }
+		}
+
 		dap.configurations = {
 			python = {
 				{
@@ -48,6 +54,16 @@ return {
 					pythonPath = 'python',
 					program = '${file}',
 					cwd = '${workspaceFolder}'
+				},
+			},
+			cs = {
+				{
+					type = 'coreclr',
+					name = 'launch - netcoredbg',
+					request = 'launch',
+					program = function()
+						return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/bin/debug/', 'file')
+					end,
 				},
 			}
 		}

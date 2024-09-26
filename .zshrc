@@ -4,6 +4,7 @@ export XDG_CONFIG_HOME=~/.config
 export EDITOR='nvim'
 export VISUAL='nvim'
 
+
 # keybindings
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -148,6 +149,11 @@ function nff() {
         nvim + "$line" "$file"
     fi
 }
+
+# DotNet Confg
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

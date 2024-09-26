@@ -70,24 +70,26 @@ return {
 			--	https://github.com/nicolargo/glances/issues/2246
 			--  "[...] solving this by going into my site-packages directory and renaming ujson.cpython-310-x86_64-linux-gnu.so to ujson.so"
 			pylsp = {
-				pylsp = {
-					plugins = {
-						flake8 = {
-							enabled = false,
+				plugins = {
+					flake8 = {
+						enabled = false,
+					},
+					pyflakes = {
+						enabled = false,
+					},
+					pycodestyle = {
+						ignore = {
+							'W931',
+							'W503' -- Binary operator occurs before line break
 						},
-						pyflakes = {
-							enabled = false,
-						},
-						pycodestyle = {
-							ignore = {
-								'W931',
-								'W503' -- Binary operator occurs before line break
-							},
-							maxLineLength = 150,
-						},
+						maxLineLength = 150,
 					},
 				},
 			},
+
+			omnisharp = {},
+			jsonls = {},
+			sqlls = {},
 
 			-- pyright = {
 			-- 	pyright = {
@@ -109,15 +111,6 @@ return {
 			--	}
 			--},
 
-			jsonls = {
-				jsonls = {
-				},
-			},
-
-			sqlls = {
-				sqlls = {
-				},
-			},
 		}
 
 		-- Mason will ensure LSPs are installed
