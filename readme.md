@@ -21,6 +21,9 @@ This repository maintains my personal configurations for:
 - fzf
 - python
 
+#### CSharp
+- [dotnet](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks?cid=getdotnetsdk)
+- [netcoredbg](https://github.com/Samsung/netcoredbg)
 
 ### Using Stow
 
@@ -54,3 +57,4 @@ These tools are not required for vim/neovim, but they make for a much better ter
 - lazygit
 - direnv
 - direnvx (for secrets)
+
