@@ -38,7 +38,7 @@ set undodir=~/.vim/undodir
 set undofile
 
 " Windows
-nmap <leader>w\ :vsplit<CR>
+nmap <leader>w/ :vsplit<CR>
 nmap <leader>w- :split<CR>
 nmap <CR> :write<CR>
 nnoremap <leader>w, :vertical resize -10<CR>

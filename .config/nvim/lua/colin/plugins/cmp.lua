@@ -89,10 +89,12 @@ return {
 			}),
 			sources = cmp.config.sources({
 				{ name = 'nvim_lsp' },
-				{ name = 'buffer',                max_item_count = 5 },
-				{ name = 'path',                  max_item_count = 3 },
-				{ name = 'luasnip',               max_item_count = 3 },
-				{ name = 'vim-dadbod-completion', max_item_count = 5 },
+				{ name = 'dap' },
+				{ name = 'buffer',                 max_item_count = 5 },
+				{ name = 'path',                   max_item_count = 3 },
+				{ name = 'luasnip',                max_item_count = 3 },
+				{ name = 'vim-dadbod-completion',  max_item_count = 5 },
+				{ name = "nvim_lsp_signature_help" },
 			}),
 
 			formatting = {
