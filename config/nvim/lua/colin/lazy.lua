@@ -51,7 +51,7 @@ require('lazy').setup({
 	require('colin.plugins.markdownpreview'),
 	require('colin.plugins.mini-comment'),
 	require('colin.plugins.noice'),
-	require('colin.plugins.notify'),
+	-- require('colin.plugins.notify'),
 	require('colin.plugins.obsidian'),
 	require('colin.plugins.quick-scope'),
 	require('colin.plugins.render-markdown'),
@@ -64,9 +64,7 @@ require('lazy').setup({
 	require('colin.plugins.tree').nvimtree(),
 	require('colin.plugins.treesitter'),
 	require('colin.plugins.trouble'),
-	require('colin.plugins.twilight'),
 	require('colin.plugins.vim-surround'),
 	require('colin.plugins.vim-tmux-navigator'),
 	require('colin.plugins.whichkey'),
-	require('colin.plugins.zen-mode'),
 })

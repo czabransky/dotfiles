@@ -64,6 +64,12 @@ return {
 				},
 			},
 
+			html = {},
+			cssls = {},
+			ts_ls = {},
+			-- emmet_ls = {},
+			-- tailwindcss = {},
+
 			--Debug pylsp settings with the following command:
 			--	enew|put=execute(\"lua print(vim.inspect(vim.lspo.get_active_clients({name='pylsp'})))\")
 			--	[[ Issues attaching pylsp ]]
@@ -131,6 +137,11 @@ return {
 					on_attach = on_attach,
 					settings = servers[server_name],
 					filetypes = (servers[server_name] or {}).filetypes,
+					init_options = {
+						preferences = {
+							disableSuggestions = true,
+						},
+					},
 				}
 			end,
 		}
@@ -169,7 +180,6 @@ return {
 				if not client.server_capabilities.documentFormattingProvider then
 					return
 				end
-
 				vim.api.nvim_create_autocmd('BufWritePre', {
 					group = get_augroup(client),
 					buffer = bufnr,

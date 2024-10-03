@@ -1,4 +1,5 @@
-.config/wslu/
-.config/systemd/
-.config/tmux/plugins/
+config/wslu/
+config/systemd/
+config/tmux/plugins/
 Session.vim
+*.service
