@@ -5,3 +5,4 @@ require('colin.core.options').setup({
 require('colin.core.keymaps')
 require('colin.core.autocmd')
 require('colin.lazy')
+require('colin.lsp')

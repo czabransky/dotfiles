@@ -19,7 +19,10 @@ return {
 				'vimdoc',
 				'xml',
 			},
-			highlight = { enable = true },
+			highlight = {
+				enable = true,
+				use_languagetree = true,
+			},
 			-- incremental_selection = {
 			-- 	enable = true,
 			-- 	keymaps = {
@@ -31,6 +34,13 @@ return {
 			-- },
 			ignore_install = {},
 			indent = { enable = true },
+			autotag = {
+				enable = true,
+				enable_rename = true,
+				enable_close = true,
+				enable_close_on_slash = true,
+				filetypes = { "html", "xml", "tsx", "js", "ts", "jsx" },
+			},
 			modules = {},
 			sync_install = true,
 			textobjects = {
